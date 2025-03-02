@@ -13,13 +13,9 @@ if ! file "$1" | grep -qE 'image|bitmap'; then
   exit 1
 fi
 
-echo setting background to "$1"
-cp "$1" $WALL_PATH
-killall hyprpaper
-nohup hyprpaper &>/dev/null &
-
 echo "Running wal to extract colors"
-wal -i $1
+wal -e -i $1
+
 if command -v pastel &> /dev/null; then
   echo "Color scheme:"
   cat $HOME/.cache/wal/colors | pastel color | pastel format hex
@@ -27,39 +23,31 @@ else
   echo "pastel is not installed, skipping."
 fi
 
-echo "Changing OpenRGB Colors to match the wallpaper."
-if command -v pastel &> /dev/null; then
-  wal-accent | pastel color
-else
-  echo $(wal-accent)
-fi
 if command -v openrgb &> /dev/null; then
+  echo "Changing OpenRGB Colors to match the wallpaper."
+  if command -v pastel &> /dev/null; then
+    wal-accent | pastel color
+  else
+    echo $(wal-accent)
+  fi
   openrgb -c $(wal-accent)
 else
   echo "openrgb is not installed, skipping."
 fi
 
+echo setting background to "$1"
+# copying to deafult path makes it "persistent"
+cp "$1" "$WALL_PATH"
+
+hyprctl hyprpaper preload "$1"
+hyprctl hyprpaper wallpaper ",$1"
+
 echo "Changing Hyprland Colors."
-colors=$(cat $HOME/.cache/wal/colors)
-colors=${colors//#/}
-readarray -t color <<<"$colors" > /dev/null
+{
+    awk '{gsub(/#/,""); print "$color"NR-1" = rgb("$1")" }' ~/.cache/wal/colors
+} > ~/.cache/wal/colors-hyprland.conf
 
-hyprTheme=$HOME/.cache/wal/colors-hyprland.conf
+hyprctl hyprpaper unload "$WALL_PATH"
+hyprctl hyprpaper preload "$WALL_PATH"
+hyprctl hyprpaper wallpaper ",$WALL_PATH"
 
-echo '' > $hyprTheme
-echo \$color0 = rgb\(${color[0]}\) >> $hyprTheme
-echo \$color1 = rgb\(${color[1]}\) >> $hyprTheme
-echo \$color2 = rgb\(${color[2]}\) >> $hyprTheme
-echo \$color3 = rgb\(${color[3]}\) >> $hyprTheme
-echo \$color4 = rgb\(${color[4]}\) >> $hyprTheme
-echo \$color5 = rgb\(${color[5]}\) >> $hyprTheme
-echo \$color6 = rgb\(${color[6]}\) >> $hyprTheme
-echo \$color7 = rgb\(${color[7]}\) >> $hyprTheme
-echo \$color8 = rgb\(${color[8]}\) >> $hyprTheme
-echo \$color9 = rgb\(${color[9]}\) >> $hyprTheme
-echo \$color10 = rgb\(${color[10]}\) >> $hyprTheme
-echo \$color11 = rgb\(${color[11]}\) >> $hyprTheme
-echo \$color12 = rgb\(${color[12]}\) >> $hyprTheme
-echo \$color13 = rgb\(${color[13]}\) >> $hyprTheme
-echo \$color14 = rgb\(${color[14]}\) >> $hyprTheme
-echo \$color15 = rgb\(${color[15]}\) >> $hyprTheme

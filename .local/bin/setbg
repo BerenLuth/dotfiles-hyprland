@@ -5,9 +5,8 @@ then
   # If gowall is not installed, use the original set-background script
   echo "gowall is not installed, using the original set-background script..."
   echo "(You can install gowall from aur with 'yay -S gowall')"
-  set-background "$@"
+  set-background "$1"
 else
   # Pass all arguments to the original set-background Python script
-  python3 ~/.local/bin/set-background.py "$@"
+  python3 $(which set-background.py) "$@"
 fi
-
