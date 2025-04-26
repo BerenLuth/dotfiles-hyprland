@@ -11,4 +11,4 @@ else
     class="unmuted"
     icon="󰍬"
 fi
-echo "{\"text\":\"$icon\",\"tooltip\":\"$node_name ${volume}%\",\"percentage\": $volume, \"node_name\": \"$node_name\", \"class\": \"$class\", \"alt\": \"$class\"}"
+echo "{\"text\":\"$icon ${volume}%\",\"tooltip\":\"$node_name ${volume}%\",\"percentage\": $volume, \"node_name\": \"$node_name\", \"class\": \"$class\", \"alt\": \"$class\"}"
