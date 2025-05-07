@@ -78,7 +78,7 @@
 	"cpu": {
 		"interval": 10,
 		"format": " {usage}%",
-		"on-click": "kitty --class=\"kitty-waybar-tool\" gotop"
+		"on-click": "kitty --class=\"kitty-waybar-tool\" gotop --nvidia"
 	},
 	"memory": {
 		"interval": 30,
