@@ -4,7 +4,6 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -82,6 +81,8 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
+source <(fzf --zsh)
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -115,7 +116,6 @@ alias weather="curl wttr.in"
 alias rebootwin="sudo bootnext windows now"
 alias open="xdg-open"
 alias vim=nvim
-alias mic='wpctl set-volume @DEFAULT_SOURCE@'
 
 alias sshgd="~/greendecision/tmux-gd-server.sh"
 alias sunshine-env="~/greendecision/tmux-sunshine.sh"
@@ -123,6 +123,8 @@ alias sunshine-env="~/greendecision/tmux-sunshine.sh"
 alias spkr="wpctl set-volume @DEFAULT_SINK@"
 alias mic="wpctl set-volume @DEFAULT_SOURCE@"
 
+alias lg="lazygit"
+alias topgrade="topgrade -c -t -y --disable containers"
 
 export PATH="/home/berenluth/.local/bin:$PATH"
 export TERM=xterm-256color
@@ -176,6 +178,14 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# ANDROID 
+export ANDROID_HOME="/home/berenluth/Android/Sdk"
+export PATH="/home/berenluth/Android/Sdk/emulator:$PATH"
+
+
+## FLUTTER
+export PATH="/home/berenluth/Projects/flutter-sdk/flutter/bin:$PATH"
 
 
 PATH=~/.console-ninja/.bin:$PATH
