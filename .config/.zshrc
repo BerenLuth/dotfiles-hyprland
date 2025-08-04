@@ -108,8 +108,8 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ls="exa"
-alias ll="ls -lah"
+alias ls="exa --icons -F -H --group-directories-first --git"
+alias ll="ls -alF"
 alias cat="bat"
 alias top="gotop --nvidia"
 alias weather="curl wttr.in"
@@ -125,6 +125,7 @@ alias mic="wpctl set-volume @DEFAULT_SOURCE@"
 
 alias lg="lazygit"
 alias topgrade="topgrade -c -t -y --disable containers"
+alias scrcpy="scrcpy -d -t"
 
 export PATH="/home/berenluth/.local/bin:$PATH"
 export TERM=xterm-256color
