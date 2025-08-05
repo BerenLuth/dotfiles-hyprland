@@ -201,6 +201,7 @@
 		"on-scroll-up": "hyprctl dispatch workspace e+1",
 		"on-scroll-down": "hyprctl dispatch workspace e-1",
 		"active-only": false,
+		"all-outputs": false,
 		"persistent-workspaces": {
 			"*": 5
 		},
@@ -240,17 +241,17 @@
 		"escape": true
 	},
 	"custom/hyprsunset": {
-		"tooltip": "Hyprsunset 3500k",
+		"tooltip": "Hyprsunset 4000k",
 		"format": "{icon}",
 		"format-icons": {
-			"on": "󰽢",
-			"off": ""
+			"on": "",
+			"off": "󰽢"
 		},
 		"exec-on-event": true,
 		"return-type": "json",
 		"exec-if": "~/.config/waybar/scripts/shouldShowHyprsunset.sh",
 		"exec": "sleep 0.2 && ~/.config/hypr/scripts/hyprsunsetToggle.sh -g",
-		"on-click": "~/.config/hypr/scripts/hyprsunsetToggle.sh 3500k",
+		"on-click": "~/.config/hypr/scripts/hyprsunsetToggle.sh 4000k",
 		"escape": true,
 		"interval": "once"
 	},

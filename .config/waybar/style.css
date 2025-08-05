@@ -399,10 +399,10 @@ label:focus {
 
 #custom-hyprsunset.on {
   background-color: #60dfff;
-  color: #ffe735;
+  color: #282a36;
 }
 
 #custom-hyprsunset.off {
   background-color: rgb(191, 138, 255);
-  color: #282a36;
+  color: #ffe735;
 }
