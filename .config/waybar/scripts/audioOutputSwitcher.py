@@ -49,6 +49,16 @@ for i, items in enumerate(sinks):
     else:
         output += f"{items['sink_name']}\n"
 
+# check if pavucontrol is installed and add a "more..." option to the end of the list
+try:
+    subprocess.run("pavucontrol --version", shell=True, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    output += "<i>More options</i>\n"
+except subprocess.CalledProcessError:
+    # pavucontrol is not installed, so we don't add the "more..." option
+    output += "<i>More options (requires pavucontrol)</i>\n"
+    pass
+
+
 # Call wofi and show the list. take the selected sink name and set it as the default sink
 # wofi_command = f"echo '{output.strip()}' | wofi --show=dmenu --hide-scroll --allow-markup --define=hide_search=false --location=top_right --width=600 --height=250 --xoffset=-60 --insensitive --prompt=\"Choose audio output\""
 wofi_command = f"echo '{output.strip()}' | rofi -dmenu -i -theme ~/.config/rofi/launchers/type-1/style-8-corner.rasi -window-title \"Audio Output Switcher\" -markup-rows -selected-row {position} -a {position} -p \"Choose audio output\" -l 4"
@@ -59,6 +69,14 @@ if wofi_process.returncode != 0:
     exit(0)
 
 selected_sink_name = wofi_process.stdout.strip()
+if selected_sink_name == "<i>More options</i>":
+    # open pavucontrol
+    subprocess.run("pavucontrol -t 3", shell=True)
+    exit(0)
+if selected_sink_name == "<i>More options (requires pavucontrol)</i>":
+    # send a notification that pavucontrol is not installed
+    subprocess.run("notify-send 'Audio Output Switcher' 'Please install pavucontrol to manage audio outputs.'", shell=True)
+    exit(0)
 sinks = parse_wpctl_status()
 selected_sink = next(sink for sink in sinks if sink['sink_name'] == selected_sink_name)
 subprocess.run(f"wpctl set-default {selected_sink['sink_id']}", shell=True)
