@@ -108,27 +108,7 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ls="exa --icons -F -H --group-directories-first --git"
-alias ll="ls -alF"
-alias cat="bat"
-alias top="gotop --nvidia"
-alias weather="curl wttr.in"
-alias rebootwin="sudo bootnext windows now"
-alias open="xdg-open"
-alias vim=nvim
-
-alias sshgd="~/greendecision/tmux-gd-server.sh"
-alias sunshine-env="~/greendecision/tmux-sunshine.sh"
-
-alias spkr="wpctl set-volume @DEFAULT_SINK@"
-alias mic="wpctl set-volume @DEFAULT_SOURCE@"
-
-alias lg="lazygit"
-alias topgrade="topgrade -c -t -y --disable containers"
-alias scrcpy="scrcpy -d -t"
-
-export PATH="/home/berenluth/.local/bin:$PATH"
-export TERM=xterm-256color
+. ~/.zsh_aliases
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -188,5 +168,7 @@ export PATH="/home/berenluth/Android/Sdk/emulator:$PATH"
 ## FLUTTER
 export PATH="/home/berenluth/Projects/flutter-sdk/flutter/bin:$PATH"
 
-
+export QT_QPA_PLATFORMTHEME="qt6ct"
 PATH=~/.console-ninja/.bin:$PATH
+
+eval "$(zoxide init zsh)"
