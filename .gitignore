@@ -2,3 +2,4 @@
 *.bak
 **/custom/*
 **/flutter/*
+.local/bin/flutter
