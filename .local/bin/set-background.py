@@ -51,7 +51,8 @@ def main():
         os.makedirs(output_path)
 
     result = os.popen(f'gowall convert "{args.input}" -f png').read()
-    output_path = result.split("saved as ")[1].split("\n")[0].strip()
+    print("Conversion result:", result)
+    output_path = result.split("saved in ")[1].split(",")[0].strip()
 
     if not os.path.isfile(output_path):
         print(f"Error: The output file '{output_path}' does not exist.")
