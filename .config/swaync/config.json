@@ -3,10 +3,10 @@
 	"positionX": "right",
 	"positionY": "top",
 	"layer": "overlay",
-	"control-center-margin-top": 2,
-	"control-center-margin-bottom": 2,
-	"control-center-margin-right": 2,
-	"control-center-margin-left": 2,
+	"control-center-margin-top": 24,
+	"control-center-margin-bottom": 24,
+	"control-center-margin-right": 24,
+	"control-center-margin-left": 24,
 	"notification-icon-size": 82,
 	"notification-body-image-height": 100,
 	"notification-body-image-width": 300,
@@ -61,7 +61,7 @@
 				},
 				{
 					"label": "󰍃",
-					"command": "hyprctl dispatch exit"
+					"command": "loginctl terminate-user $USER"
 				},
 				{
 					"label": "󰤄",
