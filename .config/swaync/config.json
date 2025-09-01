@@ -3,17 +3,17 @@
 	"positionX": "right",
 	"positionY": "top",
 	"layer": "overlay",
-	"control-center-margin-top": 10,
-	"control-center-margin-bottom": 10,
-	"control-center-margin-right": 10,
-	"control-center-margin-left": 10,
-	"notification-icon-size": 64,
+	"control-center-margin-top": 2,
+	"control-center-margin-bottom": 2,
+	"control-center-margin-right": 2,
+	"control-center-margin-left": 2,
+	"notification-icon-size": 82,
 	"notification-body-image-height": 100,
-	"notification-body-image-width": 200,
+	"notification-body-image-width": 300,
 	"timeout": 3,
 	"timeout-low": 2,
 	"timeout-critical": 0,
-	"fit-to-screen": false,
+	"fit-to-screen": true,
 	"control-center-width": 500,
 	"control-center-height": 1025,
 	"notification-window-width": 440,
@@ -23,7 +23,7 @@
 	"hide-on-clear": true,
 	"hide-on-action": true,
 	"script-fail-notify": true,
-	"widgets": ["title", "notifications", "dnd"],
+	"widgets": ["title", "notifications", "dnd", "mpris", "volume", "buttons-grid"],
 	"widget-config": {
 		"title": {
 			"text": "Notification Center",
@@ -39,7 +39,7 @@
 		},
 		"mpris": {
 			"image-size": 96,
-			"image-radius": 7
+			"image-radius": 0
 		},
 		"volume": {
 			"label": "󰕾",
@@ -69,11 +69,11 @@
 				},
 				{
 					"label": "󰕾",
-					"command": "swayosd-client --output-volume mute-toggle"
+					"command": "wpctl set-mute @DEFAULT_SINK@ toggle"
 				},
 				{
 					"label": "󰍬",
-					"command": "swayosd-client --input-volume mute-toggle"
+					"command": "wpctl set-mute @DEFAULT_SOURCE@ toggle"
 				},
 				{
 					"label": "󰖩",
@@ -81,7 +81,7 @@
 				},
 				{
 					"label": "󰂯",
-					"command": "blueman-manager"
+					"command": "bluetuith"
 				},
 				{
 					"label": "",
