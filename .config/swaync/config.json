@@ -57,7 +57,7 @@
 				},
 				{
 					"label": "󰌾",
-					"command": "$HOME/.config/hypr/scripts/lock-session.sh"
+					"command": "loginctl lock-session"
 				},
 				{
 					"label": "󰍃",
@@ -77,15 +77,15 @@
 				},
 				{
 					"label": "󰖩",
-					"command": "$HOME/.local/bin/shved/rofi-menus/wifi-menu.sh"
+					"command": "swaync-client -cp && kitty --class=\"kitty-waybar-tool\" nmtui"
 				},
 				{
 					"label": "󰂯",
-					"command": "bluetuith"
+					"command": "swaync-client -cp && kitty --class=\"kitty-waybar-tool\" bluetuith"
 				},
 				{
-					"label": "",
-					"command": "obs"
+					"label": "",
+					"command": "swaync-client -cp && kitty --class=\"kitty-waybar-tool\" /usr/local/bin/bootnext windows now"
 				}
 			]
 		}

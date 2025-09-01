@@ -8,7 +8,7 @@
 
 
 /* Colors - Gruvbox Material Theme */
-@define-color background 	    #282828;
+@define-color background 	    #282828DD;
 @define-color background-alt 	    #3c3836;
 @define-color background-alt-darker #32302f;
 @define-color accent-normal    	    #b8bb26;
