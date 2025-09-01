@@ -14,16 +14,16 @@ else
 fi
 
 # Define the list of folders
-folders=("fastfetch" "hypr" "kitty" "rofi" "swaync" "sys64" "waybar" "wlogout")
+folders=("fastfetch" "hypr" "kitty" "rofi" "swaync" "sys64" "waybar" "wlogout" "nvim" "wob")
 
 for folder in "${folders[@]}"; do
   cp -r ./.config/$folder ~/.config
 done
 
-cp -r ./.bin/* ~/.bin
+cp -r ./.local/bin/* ~/.local/bin
 
 # Define the list of files
-files=(".zshrc")
+files=(".zshrc" ".zsh_aliases")
 
 for file in "${files[@]}"; do
   cp ./.config/$file ~/

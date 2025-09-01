@@ -6,10 +6,10 @@ if [ ! -d ".config" ]; then
 fi
 
 # Define a list of strings
-folders=("fastfetch" "hypr" "kitty" "rofi" "swaync" "sys64" "waybar" "wlogout")
+folders=("fastfetch" "hypr" "nvim" "wob" "kitty" "rofi" "swaync" "sys64" "waybar" "wlogout")
 
 # Define a list of files
-files=("$HOME/.zshrc")
+files=("$HOME/.zshrc" "$HOME/.zsh_aliases")
 
 # Loop through each string in the list
 for folder in "${folders[@]}"; do
