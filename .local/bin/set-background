@@ -16,16 +16,16 @@ fi
 echo "Running wal to extract colors"
 wal -e -i $1
 
-if command -v pastel &> /dev/null; then
+if command -v pastel &>/dev/null; then
   echo "Color scheme:"
   cat $HOME/.cache/wal/colors | pastel color | pastel format hex
 else
   echo "pastel is not installed, skipping."
 fi
 
-if command -v openrgb &> /dev/null; then
+if command -v openrgb &>/dev/null; then
   echo "Changing OpenRGB Colors to match the wallpaper."
-  if command -v pastel &> /dev/null; then
+  if command -v pastel &>/dev/null; then
     wal-accent | pastel color
   else
     echo $(wal-accent)
@@ -37,17 +37,17 @@ fi
 
 echo setting background to "$1"
 # copying to deafult path makes it "persistent"
-cp "$1" "$WALL_PATH"
+rm $WALL_PATH
+ln -s "$1" "$WALL_PATH"
 
 hyprctl hyprpaper preload "$1"
 hyprctl hyprpaper wallpaper ",$1"
 
 echo "Changing Hyprland Colors."
 {
-    awk '{gsub(/#/,""); print "$color"NR-1" = rgb("$1")" }' ~/.cache/wal/colors
-} > ~/.cache/wal/colors-hyprland.conf
+  awk '{gsub(/#/,""); print "$color"NR-1" = rgb("$1")" }' ~/.cache/wal/colors
+} >~/.cache/wal/colors-hyprland.conf
 
 hyprctl hyprpaper unload "$WALL_PATH"
 hyprctl hyprpaper preload "$WALL_PATH"
 hyprctl hyprpaper wallpaper ",$WALL_PATH"
-
