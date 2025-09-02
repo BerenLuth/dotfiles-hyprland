@@ -31,7 +31,7 @@
 .notification {
     background: @background;
     color: @fontcolor;
-    border: 3px solid @bordercolor;
+    border: 2px solid @bordercolor;
     border-radius: 8px;
     padding: 4px;
 }
@@ -77,6 +77,7 @@
 
 .notification-action > button {
   border-radius: 2px;
+  padding: 4px;
 }
 
 .notification-action:hover {
@@ -98,7 +99,7 @@
 .control-center {
     background-color: @background;
     color: @fontcolor;
-    border: 3px solid @bordercolor;
+    border: 2px solid @bordercolor;
     padding: 10px;
 }
 
