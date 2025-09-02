@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Pass all arguments to the original set-background Python script
+python3 ~/.local/bin/set-background.py "$@"

@@ -22,7 +22,7 @@
 
 * {
     font-family: "MesloLGS NF";
-    font-style: italic;
+    font-style: normal;
     font-size: medium;
 }
 
@@ -33,7 +33,12 @@
     color: @fontcolor;
     border: 3px solid @bordercolor;
     border-radius: 8px;
-    padding: 12px;
+    padding: 4px;
+}
+
+.image {
+  margin-right: 24px;
+  --gtk-icon-size: 48px;
 }
 
 .body {
@@ -66,6 +71,14 @@
 }
 
 .notification-default-action:hover,
+
+.notification-action {
+}
+
+.notification-action > button {
+  border-radius: 2px;
+}
+
 .notification-action:hover {
     color: @fontcolor;
     background: transparent;
