@@ -12,7 +12,9 @@
 ## style-11    style-12    style-13    style-14    style-15
 
 dir="$HOME/.config/rofi/launchers/type-1"
-theme='style-8'
+# theme='style-8' # floating center, stylish
+# theme='style-10' # bottom bar, simple but noice
+theme='style-10'
 
 ## Run
 rofi \

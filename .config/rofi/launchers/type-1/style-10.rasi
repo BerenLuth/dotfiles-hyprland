@@ -10,13 +10,13 @@
 /*****----- Configuration -----*****/
 configuration {
 	modi:                       "drun,run";
-    show-icons:                 false;
+    show-icons:                 true;
     display-drun:               "";
     display-run:                "";
     display-filebrowser:        "";
     display-window:             "";
 	drun-display-format:        "{name}";
-	window-format:              "{w} · {c} · {t}";
+	window-format:              "{c} · {t}";
 }
 
 /*****----- Global Properties -----*****/
@@ -54,7 +54,8 @@ window {
     /* properties for window widget */
     transparency:                "real";
     location:                    north;
-    anchor:                      north;
+    anchor:                      south;
+    fullscreen:                  false;
     fullscreen:                  false;
     width:                       100%;
     x-offset:                    0px;
