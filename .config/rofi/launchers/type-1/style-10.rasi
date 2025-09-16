@@ -54,12 +54,11 @@ window {
     /* properties for window widget */
     transparency:                "real";
     location:                    north;
-    anchor:                      south;
-    fullscreen:                  false;
+    anchor:                      north;
     fullscreen:                  false;
     width:                       100%;
     x-offset:                    0px;
-    y-offset:                    0px;
+    y-offset:                    -52px;
 
     children:                    [ horibox ];
 
