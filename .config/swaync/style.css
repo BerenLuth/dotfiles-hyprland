@@ -24,7 +24,7 @@
     font-family: "MesloLGS NF";
     font-style: normal;
     font-size: medium;
-}
+  }
 
 /* Notification */
 
@@ -33,7 +33,12 @@
     color: @fontcolor;
     border: 2px solid @bordercolor;
     border-radius: 8px;
-    padding: 4px;
+    padding: 8px;
+}
+
+
+.notification-background {
+    padding: 8px 0px;
 }
 
 .image {
@@ -41,8 +46,11 @@
   --gtk-icon-size: 48px;
 }
 
+/* Notification text */
 .body {
   color: @fontcolor;
+  margin-top: 8px;
+  margin-bottom: 2px;
 }
 
 .summary {
@@ -51,6 +59,7 @@
   background: transparent;
   color: @accent-normal;
   text-shadow: none;
+  font-size: 1rem;
 }
 
 .time {
@@ -59,7 +68,7 @@
   background: transparent;
   color: @fontcolor;
   text-shadow: none;
-  margin-right: 18px;
+  margin-right: 8px;
 }
 
 .close-button {
@@ -100,31 +109,32 @@
     background-color: @background;
     color: @fontcolor;
     border: 2px solid @bordercolor;
-    padding: 10px;
+    padding: 2px;
 }
 
 /* Notifications expanded-group */
 
 .notification-group {
   background-color: transparent;
-  margin: 2px 8px 2px 8px;
+  margin: 2px;
   font-size: 8px;
-
 }
 
 .notification-group-icon {
   color: @fontcolor;
+  margin-right: 8px;
 }
 
 .notification-group-headers {
   color: @fontcolor;
+  margin: 2px 0px;
 }
 
 .notification-group-collapse-button,
 .notification-group-close-all-button {
   background: @accent-normal;
   color: @fontaltcolor;
-  margin: 4px; 
+  margin-left: 2px; 
   border-radius: 6px;
   padding: 4px;
 }
@@ -166,8 +176,8 @@ button {
 
 .widget-buttons-grid > flowbox > flowboxchild > button {
     color: @fontcolor;
-    margin: 8px;
-    padding: 10px;
+    margin: 0px;
+    padding: 18px;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
@@ -215,7 +225,19 @@ button {
   background: @background-alt-darker;
   color: @fontcolor;
   font-size: medium;
+  margin: 8px;
 }
+
+.widget-volume label {
+  font-size: 1.5rem;
+  /* color: @accent-normal; */
+  margin-left: 12px;
+}
+
+.widget-volume trough highlight {
+  background: @accent-normal;
+}
+
 
 
 .widget-backlight {
