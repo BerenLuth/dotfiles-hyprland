@@ -1,11 +1,13 @@
 #!/bin/bash 
 
-if [ -f ~/.config/waybar/style-dark.css.disabled ]; then
-  mv ~/.config/waybar/style-dark.css.disabled ~/.config/waybar/style-dark.css
-  ~/.local/bin/set-background ~/.config/hypr/wallpaper/wallpaper-dark
+rm ~/.config/waybar/style.css
+
+if [ -f ~/.config/waybar/theme-dark ]; then
+  mv ~/.config/waybar/theme-dark ~/.config/waybar/theme-light
+  ln -s ~/.config/waybar/dark.css ~/.config/waybar/style.css
 else
-  mv ~/.config/waybar/style-dark.css ~/.config/waybar/style-dark.css.disabled
-  ~/.local/bin/set-background ~/.config/hypr/wallpaper/wallpaper-light
+  mv ~/.config/waybar/theme-light ~/.config/waybar/theme-dark
+  ln -s ~/.config/waybar/light.css ~/.config/waybar/style.css
 fi
 
 ~/.config/hypr/scripts/restart-waybar.sh
