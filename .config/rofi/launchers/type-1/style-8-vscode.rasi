@@ -65,7 +65,7 @@ window {
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
-    border:                      0px solid;
+    border:                      2px solid;
     border-radius:               10px;
     border-color:                @border-colour;
     cursor:                      "default";
@@ -126,7 +126,7 @@ textbox-prompt-colon {
     enabled:                     true;
     padding:                     5px 0px;
     expand:                      false;
-    str:                         " ";
+    str:                         " ";
     background-color:            inherit;
     text-color:                  inherit;
 }
@@ -136,7 +136,7 @@ entry {
     background-color:            inherit;
     text-color:                  inherit;
     cursor:                      text;
-    placeholder:                 "Search...";
+    placeholder:                 "Launch a project in vscode...";
     placeholder-color:           inherit;
 }
 num-filtered-rows {
@@ -176,7 +176,6 @@ listview {
     reverse:                     false;
     fixed-height:                true;
     fixed-columns:               true;
-    
     spacing:                     5px;
     margin:                      0px;
     padding:                     0px;
