@@ -4,7 +4,7 @@ cd "$(dirname "$0")"
 
 read -p "Do you want to install the packages? (y/N): " choice
 if [[ "$choice" == "y" || "$choice" == "Y" ]]; then
-  yay -S hyprland hyprpaper hyprlock hypridle waybar swaync kitty xdg-desktop-portal-hyprland wlogout hyprshot battop syshud hyprsunset rofi-wayland python-pywal cliphist gowall zoxide ripgrep bat exa bluetuith satty
+  yay -S hyprland hyprpaper hyprlock hypridle waybar swaync kitty xdg-desktop-portal-hyprland wlogout hyprshot battop syshud hyprsunset rofi-wayland python-pywal cliphist gowall zoxide ripgrep bat exa bluetuith satty gnome-keyring
   yay -S --asdeps ddcutil
   hyprpm add https://github.com/hyprwm/hyprland-plugins
   hyprpm enable hyprexpo
