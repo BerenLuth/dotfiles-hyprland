@@ -80,18 +80,20 @@
 }
 
 .notification-default-action:hover,
-
 .notification-action {
 }
 
 .notification-action > button {
   border-radius: 2px;
   padding: 4px;
+  cursor: pointer;
+  background: @background-alt;
 }
 
-.notification-action:hover {
-    color: @fontcolor;
-    background: transparent;
+.notification-action > button:hover {
+    color: @fontaltcolor;
+    background: @accent-normal;
+    
 }
 
 .notification.critical progress {
@@ -110,6 +112,7 @@
     color: @fontcolor;
     border: 2px solid @bordercolor;
     padding: 2px;
+    /* box-shadow: inset 0px 00px 15px 0px rgba(66, 68, 90, 1); */
 }
 
 /* Notifications expanded-group */
@@ -122,7 +125,9 @@
 
 .notification-group-icon {
   color: @fontcolor;
-  margin-right: 8px;
+  margin: 0px 8px 0px 12px;
+  --gtk-icon-size: 12px;
+  size: 12px;
 }
 
 .notification-group-headers {
@@ -136,7 +141,8 @@
   color: @fontaltcolor;
   margin-left: 2px; 
   border-radius: 6px;
-  padding: 4px;
+  padding: 2px;
+  
 }
 
 .notification-group-collapse-button:hover,
