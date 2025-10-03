@@ -197,7 +197,7 @@ button {
 
 /* dnd widget */
 .widget-dnd {
-  background: transparent;
+  background:  @background-alt-darker;
   border: 1px solid transparent;
   font-size: medium;
   color: @fontcolor;
@@ -211,13 +211,12 @@ button {
   background: @background-alt;
   color: @fontcolor;
   border-radius: 6px;
+  border: 2px solid transparent;
 }
 
 .widget-dnd>switch:checked {
   background: @accent-error;
-  border: 1px solid @accent-error;
 }
-
 
 /* volume & backlight widget */
 
