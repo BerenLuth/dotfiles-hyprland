@@ -282,6 +282,11 @@ label:focus {
 	color: #1197b2;
 }
 
+#bluetooth.off {
+	color: #0a5869;
+	background-color: #282a36;
+}
+
 #network.disconnected {
 	color: #facd50;
 	background-color: #282a36;
