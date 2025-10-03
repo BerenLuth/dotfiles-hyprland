@@ -87,7 +87,7 @@
 		"tooltip-format": "RAM: {used:0.1f} / {total:0.1f} GB"
 	},
 	"temperature": {
-		"critical-threshold": 60,
+		"critical-threshold": 70,
 		"format": " {temperatureC}°",
 		"hwmon-path": [
 			"/sys/class/hwmon/hwmon2/temp1_input",
@@ -115,7 +115,8 @@
 		},
 		"format-wifi": "{icon} {essid}",
 		"format-ethernet": "󰈀 Eth",
-		"format-disconnected": "󱞐 offline",
+		"format-disconnected": "󱛇 Connecting",
+		"format-disabled": "󱞐 Offline",
 		"tooltip-format-wifi": "Strenght: {signalStrength}%\nFrequency: {frequency}\nIP: {ipaddr}",
 		"tooltip-format-ethernet": "Network: {ifname}\nIP: {ipaddr}",
 		"tooltip-format-disconnected": "Disconnected",
