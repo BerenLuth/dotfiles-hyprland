@@ -116,10 +116,12 @@
 		"format-wifi": "{icon} {essid}",
 		"format-ethernet": "󰈀 Eth",
 		"format-disconnected": "󱛇 Connecting",
+		"format-linked": "{icon} / 󰯄 VPN on",
 		"format-disabled": "󱞐 Offline",
 		"tooltip-format-wifi": "Strenght: {signalStrength}%\nFrequency: {frequency}\nIP: {ipaddr}",
 		"tooltip-format-ethernet": "Network: {ifname}\nIP: {ipaddr}",
 		"tooltip-format-disconnected": "Disconnected",
+		"tooltip-format-linked": "Network: {ifname}\nIP: {ipaddr}\nVPN on",
 		"on-click": "kitty --class=\"kitty-waybar-tool\" nmtui"
 	},
 	"bluetooth": {
