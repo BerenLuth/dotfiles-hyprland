@@ -144,6 +144,8 @@ window#waybar.solo {
 #sway-scratchpad,
 #bluetooth,
 #power-profiles-daemon,
+#custom-micInUse,
+#privacy,
 #mpd {
 	padding: 0 10px;
 	margin: 4px 2px;
@@ -262,12 +264,25 @@ label:focus {
   color: #282a36;
 }
 
+
 #wireplumber.muted,
 #pulseaudio.muted,
 #custom-microphone.muted {
   background-color: #44475a;
   color: #f8f8f2;
 }
+
+
+#custom-micInUse {
+  background-color: #00cd00;
+  color: #f8f8f8;
+}
+
+#custom-micInUse.muted {
+  background-color: #ff5555;
+  color: #f8f8f8;
+}
+
 
 #custom-media.custom-spotify {
   background-color: #66cc99;

@@ -4,8 +4,16 @@
 	"height": 40,
 	"spacing": 4,
 	"margin": 6,
-	"modules-left": ["hyprland/submap", "hyprland/workspaces", "hyprland/window"],
-	"modules-center": ["clock"],
+	"modules-left": [
+		"hyprland/submap",
+		"hyprland/workspaces",
+		"hyprland/window",
+		"privacy"
+	],
+	"modules-center": [
+		"custom/micInUse",
+		"clock"
+	],
 	"modules-right": [
 		"tray",
 		"network",
@@ -306,5 +314,20 @@
 		"interval": 60,
 		"width": 30,
 		"icon": true
+	},
+	"custom/micInUse": {
+		"exec-if": "~/.config/waybar/scripts/micInUse.sh",
+		"exec": "~/.config/waybar/scripts/audioSourceStatus.sh",
+		"return-type": "json",
+		"format": "{icon}",
+		"format-icons": {
+			"muted": "󰍭",
+			"unmuted": "󰍬"
+		},
+		"on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 2%+ --limit 1",
+		"on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 2%- --limit 1",
+		"on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
+		"on-click-right": "~/.config/hypr/scripts/micSwitcher.py",
+		"interval": 1
 	}
 }
