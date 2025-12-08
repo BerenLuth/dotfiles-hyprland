@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# always show the hyprsunset icon during the day in waybar
+exit 0
+
 # Get the current hour
 current_hour=$(date +"%H")
 

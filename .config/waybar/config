@@ -264,6 +264,7 @@
 		"exec-if": "~/.config/waybar/scripts/shouldShowHyprsunset.sh",
 		"exec": "sleep 0.2 && ~/.config/hypr/scripts/hyprsunsetToggle.sh -g",
 		"on-click": "~/.config/hypr/scripts/hyprsunsetToggle.sh 4000k",
+		"on-click-right": "~/.config/hypr/scripts/hyprsunsetToggle.sh off",
 		"escape": true,
 		"interval": "once"
 	},
