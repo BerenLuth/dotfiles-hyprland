@@ -315,7 +315,7 @@ label:focus {
 
 #custom-micInUse {
   background-color: #00cd00;
-  color: #f8f8f8;
+  color: #282a36;
 }
 
 #custom-micInUse.muted {
@@ -499,4 +499,9 @@ label:focus {
 
 #custom-hyprsunset.off {
 	color: #ffb300;
+}
+
+#privacy {
+	background-color: #ffdd00;
+	color: #050505;
 }
