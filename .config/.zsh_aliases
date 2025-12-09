@@ -20,6 +20,8 @@ alias lg="lazygit"
 alias topgrade="topgrade -c -t -y --disable containers"
 alias scrcpy="scrcpy -d -t"
 
+alias qrreader="zbarcam -1"
+
 export PATH="/home/berenluth/.local/bin:$PATH"
 export TERM=xterm-256color
 

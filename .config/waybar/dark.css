@@ -64,24 +64,26 @@ window#waybar.solo {
 }
 
 #workspaces button:nth-child(2) {
-  color: #92ba92;
-	border-color: #92ba92;
+  color: #ffc400;
+	border-color: #ffc400;
 }
 
 #workspaces button:nth-child(3) {
-  color: #fcb735;
-	border-color: #fcb735;
+  color: #7C3AED;
+	border-color: #7C3AED;
 }
 
+
 #workspaces button:nth-child(4) {
+  color: #FC6D26;
+	border-color: #FC6D26;
+}
+
+#workspaces button:nth-child(5) {
   color: #55a1ff;
 	border-color: #55a1ff;
 }
 
-#workspaces button:nth-child(5) {
-  color: #4caf50;
-	border-color: #4caf50;
-}
 #workspaces button:nth-child(6) {
   color: #51bccd;
 	border-color: #51bccd;
@@ -377,8 +379,8 @@ label:focus {
 }
 
 #idle_inhibitor.activated {
-	color: #ffdd00;
-	background-color: #050505;
+	background-color: #ffbf00;
+	color: #050505;
 }
 
 #idle_inhibitor {
