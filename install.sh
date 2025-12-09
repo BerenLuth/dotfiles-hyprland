@@ -21,6 +21,7 @@ for folder in "${folders[@]}"; do
 done
 
 cp -r ./.local/bin/* ~/.local/bin
+cp -r ./.local/share/applications/* ~/.local/share/applications
 
 # Define the list of files
 files=(".zshrc" ".zsh_aliases")

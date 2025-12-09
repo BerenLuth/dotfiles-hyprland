@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=QR scanner
+Comment=Qr scanner (nodisplay)
+Exec=/home/berenluth/.local/bin/qrreader.sh
+Terminal=false
+Type=Application
+Icon=camera
+StartupNotify=true
+MimeType=application/x-ipynb+json;
+Categories=Security;
+Keywords=camera;scanner;qr;code
