@@ -4,39 +4,41 @@
 }
 
 window {
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.7);
 }
 
 button {
-	border-radius: 16px;
+	border-radius: 0px;
 	border-color: black;
 	text-decoration-color: #ffffff;
 	color: #ffffff;
-	background-color: #1e1e1e;
+	background-color: rgba(179, 75, 0, 0.2);
 	border-style: solid;
-	border-width: 1px;
+	border-width: 2px;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 25%;
-	margin: 32px;
+	margin: 32px 0px;
 	transition: all 0.5s;
 }
 
 button:hover {
-	background-color: #863800;
-	background-size: 29%;
+	background-color: rgba(0, 0, 0, 0.5);
+	background-size: 26%;
 }
 
 button:focus,
 button:active {
-	background-color: #b34b00;
+	background-color: rgb(179, 75, 0);
 	outline-style: none;
 	/* outline-style: solid;
 	outline-width: 4px;
 	outline-color: #ffb922;
 	outline-radius: 32px; */
-	border-radius: 32px;
+	border-radius: 16px;
 	background-size: 29%;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+	margin: 0px 4px;
 }
 
 
