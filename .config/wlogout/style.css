@@ -20,6 +20,7 @@ button {
 	background-size: 25%;
 	margin: 32px 0px;
 	transition: all 0.5s;
+	min-width: 175px;
 }
 
 button:hover {
