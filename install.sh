@@ -14,7 +14,7 @@ else
 fi
 
 # Define the list of folders
-folders=("fastfetch" "hypr" "kitty" "rofi" "swaync" "sys64" "waybar" "wlogout" "nvim" "wob")
+folders=("fastfetch" "hypr" "kitty" "rofi" "swaync" "sys64" "waybar" "wlogout" "nvim" "wob" "mpv")
 
 for folder in "${folders[@]}"; do
   cp -r ./.config/$folder ~/.config
