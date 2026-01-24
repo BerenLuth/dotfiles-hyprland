@@ -167,11 +167,11 @@
 			}
 		},
 		"actions": {
-			"on-click-right": "mode",
+			"on-click-middle": "mode",
 			"on-scroll-up": "shift_up",
 			"on-scroll-down": "shift_down"
 		},
-		"on-click-middle": "thunderbird --calendar && hyprctl dispatch workspace 5"
+		"on-click-right": "thunderbird --calendar"
 	},
 	"pulseaudio": {
 		"format": "{icon} {volume}%",
