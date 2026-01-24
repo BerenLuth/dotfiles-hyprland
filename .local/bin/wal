@@ -109,6 +109,7 @@ set_color() {
     scss_colors+="\$color${1}: ${2};${newline}"
     firefox_colors+="  --color${1}: ${2};${newline}"
     putty_colors+="\"Colour${1}\"=\"$(convert_to_rgb "${2}")\"${newline}"
+    kitty_colors+="color${1}    ${2}${newline}"
 
     # Set *.color and *color to fix issues with Polybar.
     x_colors+="*color${1}: ${2}${newline}"
@@ -307,6 +308,11 @@ export_xrdb() {
     out "export: Exported xrdb colors"
 }
 
+export_kitty() {
+    printf "%s" "$kitty_colors"
+    out "export: Exported kitty colors"
+}
+
 export_colors() {
     export_sequences > "${cache_dir}/sequences"
     export_envar     > "${cache_dir}/colors.sh"
@@ -317,6 +323,7 @@ export_colors() {
     export_plain     > "${cache_dir}/colors"
     export_xrdb      > "${cache_dir}/colors.xresources"
     export_putty     > "${cache_dir}/colors.reg"
+    export_kitty     > "${cache_dir}/colors-kitty.conf"
 }
 
 
