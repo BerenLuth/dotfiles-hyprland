@@ -139,16 +139,15 @@ window#waybar.solo {
 	border-bottom: 3px solid #ffffff;
 }
 
+
+
 #window,
 #submap,
 #user,
 #workspaces,
 #clock,
 #battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
+#hw,
 #backlight,
 #network,
 #pulseaudio,
@@ -174,6 +173,13 @@ window#waybar.solo {
 	color: #f8f8f2;
 	background-color: #282a36;
 	border-radius: 8px;
+}
+
+#cpu,
+#memory,
+#temperature,
+#disk {
+	padding: 0px 4px;
 }
 
 /* .module {
@@ -270,6 +276,13 @@ label:focus {
 #memory {
 	color: #f1fa8c;
 	background-color: #282a36;
+}
+
+#custom-top {
+	color: #dedede;
+	padding: 0px 8px 0px 2px;
+	margin: 0px 4px 0px 0px;
+	border-radius: 2px;
 }
 
 #backlight {
