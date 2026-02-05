@@ -139,16 +139,15 @@ window#waybar.solo {
 	border-bottom: 3px solid #ffffff;
 }
 
+
+
 #window,
 #submap,
 #user,
 #workspaces,
 #clock,
 #battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
+#hw,
 #backlight,
 #network,
 #pulseaudio,
@@ -168,12 +167,20 @@ window#waybar.solo {
 #power-profiles-daemon,
 #custom-micInUse,
 #privacy,
+#temperature,
 #mpd {
 	padding: 0 10px;
 	margin: 4px 2px;
 	color: #f8f8f2;
 	background-color: #282a36;
 	border-radius: 8px;
+}
+
+#cpu,
+#memory,
+#temperature,
+#disk {
+	padding: 0px 4px;
 }
 
 /* .module {
@@ -234,8 +241,8 @@ window#waybar.empty #window {
 
 @keyframes blink {
 	to {
-		color: #ffffff;
-		background-color: #000000;
+		color: #f4f4f4;
+		background-color: #0a0a0a;
 	}
 }
 
@@ -270,6 +277,13 @@ label:focus {
 #memory {
 	color: #f1fa8c;
 	background-color: #282a36;
+}
+
+#custom-top {
+	color: #dedede;
+	padding: 0px 8px 0px 2px;
+	margin: 0px 4px 0px 0px;
+	border-radius: 2px;
 }
 
 #backlight {
@@ -337,15 +351,25 @@ label:focus {
 	color: #65d800;
 }
 
-#temperature {
+#temperature, #temperature.warning {
 	color: #ff79c6;
 	background-color: #282a36;
+	padding-left: 8px;
+	padding-right: 8px;
 }
 
 #temperature.critical {
 	color: #ff5555;
 	background-color: #282a36;
+	animation-name: blink;
+	animation-duration: 0.5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	padding-left: 8px;
+	padding-right: 8px;
 }
+
 
 #tray {
 	color: rgba(243, 243, 243, 0.355);
@@ -473,16 +497,6 @@ label:focus {
 
 #custom-logo:hover {
 	color: #75ff3f;
-}
-
-#temperature.critical {
-	color: #ff5555;
-	background-color: #282a36;
-	animation-name: blink;
-	animation-duration: 0.5s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
 }
 
 #power-profiles-daemon.power-saver {

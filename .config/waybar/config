@@ -19,15 +19,29 @@
 		"tray",
 		"network",
 		"bluetooth",
-		"group/monitor",
-		"memory",
 		"temperature",
-		"disk",
+		"group/hw",
 		"group/audio",
 		"battery",
 		"custom/notification",
 		"group/power"
 	],
+	"group/hw": {
+		"orientation": "horizontal",
+		"drawer": {
+			"transition-duration": 500,
+			"children-class": "not-power",
+			"transition-left-to-right": false,
+			"click-to-reveal": true
+		},
+		"on-click-right": "kitty --class=\"kitty-waybar-tool\" gotop --nvidia",
+		"modules": [
+			"group/monitor",
+			"custom/top",
+			"disk",
+			"memory"
+		]
+	},
 	"group/monitor": {
 		"orientation": "horizontal",
 		"drawer": {
@@ -87,8 +101,7 @@
 	},
 	"cpu": {
 		"interval": 10,
-		"format": " {usage}%",
-		"on-click": "kitty --class=\"kitty-waybar-tool\" gotop --nvidia"
+		"format": " {usage}%"
 	},
 	"memory": {
 		"interval": 30,
@@ -98,7 +111,10 @@
 	},
 	"temperature": {
 		"critical-threshold": 75,
-		"format": " {temperatureC}°",
+		"warning-threshold": 55,
+		"format": "",
+		"format-warning": " {temperatureC}°",
+		"format-critical": "󰈸 {temperatureC}°",
 		"hwmon-path": [
 			"/sys/class/hwmon/hwmon2/temp1_input",
 			"/sys/class/thermal/thermal_zone0/temp"
@@ -112,11 +128,14 @@
 			"warning": 35,
 			"critical": 15
 		},
-		"format": "{icon} {capacity}%",
+		"format": "{icon}",
+		"format-alt": "{icon} {capacity}%",
 		"format-charging": "󰂄 {capacity}%",
 		"format-plugged": "󰂄 {capacity}%",
+		"format-good": "",
+		"format-full": "",
 		"format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"],
-		"on-click": "kitty --class=\"kitty-waybar-tool\" battop"
+		"on-click-right": "kitty --class=\"kitty-waybar-tool\" battop"
 	},
 	"network": {
 		"format": "{icon}",
@@ -276,6 +295,14 @@
 			"default": "  "
 		},
 		"on-click": "wlogout"
+	},
+	"custom/top": {
+		"tooltip": false,
+		"format": "{icon}",
+		"format-icons": {
+			"default": "󰅀"
+		},
+		"on-click": "kitty --class=\"kitty-waybar-tool\" gotop --nvidia"
 	},
 	"hyprland/submap": {
 		"format": "{} mode",
