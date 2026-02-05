@@ -19,6 +19,7 @@
 		"tray",
 		"network",
 		"bluetooth",
+		"temperature",
 		"group/hw",
 		"group/audio",
 		"battery",
@@ -37,7 +38,6 @@
 		"modules": [
 			"group/monitor",
 			"custom/top",
-			"temperature",
 			"disk",
 			"memory"
 		]
@@ -110,7 +110,10 @@
 	},
 	"temperature": {
 		"critical-threshold": 75,
-		"format": " {temperatureC}°",
+		"warning-threshold": 55,
+		"format": "",
+		"format-warning": " {temperatureC}°",
+		"format-critical": "󰈸 {temperatureC}°",
 		"hwmon-path": [
 			"/sys/class/hwmon/hwmon2/temp1_input",
 			"/sys/class/thermal/thermal_zone0/temp"
@@ -124,11 +127,14 @@
 			"warning": 35,
 			"critical": 15
 		},
-		"format": "{icon} {capacity}%",
+		"format": "{icon}",
+		"format-alt": "{icon} {capacity}%",
 		"format-charging": "󰂄 {capacity}%",
 		"format-plugged": "󰂄 {capacity}%",
+		"format-good": "",
+		"format-full": "",
 		"format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"],
-		"on-click": "kitty --class=\"kitty-waybar-tool\" battop"
+		"on-click-right": "kitty --class=\"kitty-waybar-tool\" battop"
 	},
 	"network": {
 		"format": "{icon}",
