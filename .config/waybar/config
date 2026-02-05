@@ -69,7 +69,8 @@
 		"max-length": 25,
 		"tooltip-format": "{title}",
 		"separate-outputs": true,
-		"on-click-middle": "hyprctl dispatch submap 󰏫 Edit",
+		"on-click-middle": "hyprctl dispatch togglefloating",
+		"on-click-right": "hyprctl dispatch pseudo",
 		"on-click": "~/.config/rofi/launchers/type-1/launcher.sh window",
 		"icon": true,
 		"icon-size": 20
