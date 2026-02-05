@@ -162,6 +162,7 @@ window#waybar.solo {
 #custom-logo,
 #custom-hyprsunset,
 #custom-nvidia,
+#custom-tray,
 #sway-scratchpad,
 #bluetooth,
 #power-profiles-daemon,
@@ -370,6 +371,11 @@ label:focus {
 	padding-right: 8px;
 }
 
+#custom-tray {
+	color: #bebebe;
+	background-color: #282a36;
+	padding: 0 2px;
+}
 
 #tray {
 	color: rgba(243, 243, 243, 0.355);

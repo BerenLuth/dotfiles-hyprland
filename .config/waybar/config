@@ -16,7 +16,7 @@
 		"clock"
 	],
 	"modules-right": [
-		"tray",
+		"group/tray",
 		"network",
 		"bluetooth",
 		"temperature",
@@ -26,6 +26,26 @@
 		"custom/notification",
 		"group/power"
 	],
+	"custom/tray": {
+		"tooltip": false,
+		"format": "{icon}",
+		"format-icons": {
+			"default": ""
+		}
+	},
+	"group/tray": {
+		"orientation": "horizontal",
+		"drawer": {
+			"transition-duration": 500,
+			"children-class": "not-power",
+			"transition-left-to-right": false,
+			"click-to-reveal": true
+		},
+		"modules": [
+			"custom/tray",
+			"tray"
+		]
+	},
 	"group/hw": {
 		"orientation": "horizontal",
 		"drawer": {
@@ -83,7 +103,8 @@
 		"max-length": 25,
 		"tooltip-format": "{title}",
 		"separate-outputs": true,
-		"on-click-middle": "hyprctl dispatch submap 󰏫 Edit",
+		"on-click-middle": "hyprctl dispatch togglefloating",
+		"on-click-right": "hyprctl dispatch pseudo",
 		"on-click": "~/.config/rofi/launchers/type-1/launcher.sh window",
 		"icon": true,
 		"icon-size": 20
@@ -332,7 +353,7 @@
 		"path": "/"
 	},
 	"custom/nvidia": {
-		"exec": "nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,nounits,noheader | sed 's/\\([0-9]\\+\\), \\([0-9]\\+\\)/ \\1%  \\2°C/g'",
+		"exec": "nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,nounits,noheader | sed 's/\\([0-9]\\+\\), \\([0-9]\\+\\)/󰢮 \\1%  \\2°C/g'",
 		"format": "GPU: {}",
 		"interval": 10,
 		"on-click": "kitty --class=\"kitty-waybar-tool\" watch -n 5 nvidia-smi"
