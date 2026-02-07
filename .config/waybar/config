@@ -150,10 +150,9 @@
 		},
 		"format": "{icon}",
 		"format-alt": "{icon} {capacity}%",
+		"format-warning": "󰂂 {capacity}%",
 		"format-charging": "󰂄 {capacity}%",
 		"format-plugged": "󰂄 {capacity}%",
-		"format-good": "",
-		"format-full": "",
 		"format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"],
 		"on-click-right": "kitty --class=\"kitty-waybar-tool\" battop"
 	},
