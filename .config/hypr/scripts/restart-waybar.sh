@@ -1,3 +1,2 @@
 #!/bin/bash
-killall waybar
-waybar &
+killall waybar || waybar &
