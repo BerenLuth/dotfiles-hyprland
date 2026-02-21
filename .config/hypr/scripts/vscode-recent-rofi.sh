@@ -8,4 +8,6 @@ selected=$(echo "$recent" | rofi -theme ~/.config/rofi/launchers/type-1/style-8-
 if [ -z "$selected" ]; then
   exit 1
 fi
-code "$selected"
+
+#code "$selected"
+zeditor "$selected"

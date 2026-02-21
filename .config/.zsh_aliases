@@ -17,7 +17,7 @@ alias spkr="wpctl set-volume @DEFAULT_SINK@"
 alias mic="wpctl set-volume @DEFAULT_SOURCE@"
 
 alias lg="lazygit"
-alias topgrade="topgrade -c -t -y --disable containers"
+alias topgrade="topgrade -c -y --disable containers"
 alias scrcpy="scrcpy -d -t"
 
 alias qrreader="zbarcam -1"
