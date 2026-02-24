@@ -1,32 +1,34 @@
 * {
-	all: unset;
-	border: none;
-	border-radius: 4;
-	font-family: MesloLGS NF, monospace;
-	font-size: 15px;
+  all: unset;
+  border: none;
+  border-radius: 4;
+  font-family:
+    MesloLGS NF,
+    monospace;
+  font-size: 15px;
 }
 
 window#waybar {
-	background: red;
-	background-color: rgba(41, 41, 41, 0.1);
-	color: white;
-	transition-property: color;
-	transition-duration: .5s;
-	border-radius: 8px;
+  background: red;
+  background-color: rgba(41, 41, 41, 0.1);
+  color: white;
+  transition-property: color;
+  transition-duration: 0.5s;
+  border-radius: 8px;
 }
 
 window#waybar.hidden {
-	opacity: 0.2;
+  opacity: 0.2;
 }
 
 tooltip {
-	background: #26a65b;
-	background-color: rgb(43, 48, 59);
-	border: 1px solid rgba(100, 114, 125, 0.5);
+  background: #26a65b;
+  background-color: rgb(43, 48, 59);
+  border: 1px solid rgba(100, 114, 125, 0.5);
 }
 
 tooltip label {
-	color: white;
+  color: white;
 }
 
 /*
@@ -47,99 +49,99 @@ window#waybar.solo {
 }*/
 
 #workspaces button {
-	padding: 0 0.6em;
+  padding: 0 0.6em;
   margin: 0 0.1em;
-	color: rgba(166, 176, 184, 0.764);
-	background-color: rgba(17, 17, 17, 1);
-	min-width: 12px;
-	font-size: medium;
-	border-radius: 8px;
-	border: 0px solid transparent;
-	transition: background-color .25s, color 0.25s, min-width 0.25s;
+  color: rgba(166, 176, 184, 0.764);
+  background-color: rgba(17, 17, 17, 1);
+  min-width: 12px;
+  font-size: medium;
+  border-radius: 8px;
+  border: 0px solid transparent;
+  transition:
+    background-color 0.25s,
+    color 0.25s,
+    min-width 0.25s;
 }
 
 #workspaces button:nth-child(1) {
   color: #ff6361;
-	border-color: #ff6361;
+  border-color: #ff6361;
 }
 
 #workspaces button:nth-child(2) {
   color: #ffc400;
-	border-color: #ffc400;
+  border-color: #ffc400;
 }
 
 #workspaces button:nth-child(3) {
-  color: #7C3AED;
-	border-color: #7C3AED;
+  color: #7c3aed;
+  border-color: #7c3aed;
 }
 
-
 #workspaces button:nth-child(4) {
-  color: #FC6D26;
-	border-color: #FC6D26;
+  color: #fc6d26;
+  border-color: #fc6d26;
 }
 
 #workspaces button:nth-child(5) {
   color: #55a1ff;
-	border-color: #55a1ff;
+  border-color: #55a1ff;
 }
 
 #workspaces button:nth-child(6) {
   color: #51bccd;
-	border-color: #51bccd;
+  border-color: #51bccd;
 }
 #workspaces button:nth-child(7) {
   color: #fa7840;
-	border-color: #fa7840;
+  border-color: #fa7840;
 }
 
 #workspaces button.empty {
   color: rgba(100, 100, 100, 0.6);
-	border-color: rgba(100, 100, 100, 1);
+  border-color: rgba(100, 100, 100, 1);
 }
 
 #workspaces button:hover {
-	background-color: rgba(17, 17, 17, 0.9);
-	color: rgba(250, 189, 47, 0.9);
+  background-color: rgba(17, 17, 17, 0.9);
+  color: rgba(250, 189, 47, 0.9);
 }
 
 #workspaces button.focused {
-	color: #64727d;
+  color: #64727d;
 }
 
 @keyframes blink-workspace {
-	to {
-		background-color: #ff1d1d;
-		color: #ffffff;
-		border-radius: 8px;
-	}
+  to {
+    background-color: #ff1d1d;
+    color: #ffffff;
+    border-radius: 8px;
+  }
 }
 
 #workspaces button.urgent {
-	border-radius: 8px;
-	animation-name: blink-workspace;
-	animation-duration: 0.5s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
+  border-radius: 8px;
+  animation-name: blink-workspace;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 #workspaces button.active {
-	/* color: rgb(250, 189, 47);
+  /* color: rgb(250, 189, 47);
 	background-color: #282a36; */
-	border-style: solid;
-	border-width: 3px;
-	/* border-color: rgb(250, 189, 47); */
-	/* border: 2px solid; */
-	min-width: 26px;
+  border-style: solid;
+  border-width: 3px;
+  /* border-color: rgb(250, 189, 47); */
+  /* border: 2px solid; */
+  min-width: 26px;
 }
 
 #mode {
-	color: #64727d;
-	border-bottom: 3px solid #ffffff;
+  color: #64727d;
+  border-bottom: 3px solid #ffffff;
 }
-
-
 
 #window,
 #submap,
@@ -170,18 +172,18 @@ window#waybar.solo {
 #privacy,
 #temperature,
 #mpd {
-	padding: 0 10px;
-	margin: 4px 2px;
-	color: #f8f8f2;
-	background-color: #282a36;
-	border-radius: 8px;
+  padding: 0 10px;
+  margin: 4px 2px;
+  color: #f8f8f2;
+  background-color: #282a36;
+  border-radius: 8px;
 }
 
 #cpu,
 #memory,
 #temperature,
 #disk {
-	padding: 0px 4px;
+  padding: 0px 4px;
 }
 
 /* .module {
@@ -195,139 +197,139 @@ window#waybar.solo {
 } */
 
 #window {
-	color: #ff7e15;
-	background-color: rgba(17, 17, 17, 1);
-	padding: 0 12px;
+  color: #ff7e15;
+  background-color: rgba(17, 17, 17, 1);
+  padding: 0 12px;
 }
 
 /* make window module transparent when no windows present */
 window#waybar.empty #window {
-	background-color: transparent;
+  background-color: transparent;
 }
 
 #workspaces {
-	padding: 0 0 0 0px;
-	background-color: rgba(0, 0, 0, 0);
+  padding: 0 0 0 0px;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
-	margin-left: 0;
+  margin-left: 0;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child > #workspaces {
-	margin-right: 0;
+  margin-right: 0;
 }
 
 #clock {
-	color: #55a1ff;
-	background-color: #282a36;
+  color: #55a1ff;
+  background-color: #282a36;
 }
 
 #battery {
-	color: white;
+  color: white;
 }
 
 #submap {
-	color: #f8f8f2;
-	background-color: #ea0000;
-	font-weight: bold;
+  color: #f8f8f2;
+  background-color: #ea0000;
+  font-weight: bold;
 }
 
 #battery.charging,
 #battery.plugged {
-	color: #26a65b;
+  color: #26a65b;
 }
 
 @keyframes blink {
-	to {
-		color: #f4f4f4;
-		background-color: #0a0a0a;
-	}
+  to {
+    color: #f4f4f4;
+    background-color: #0a0a0a;
+  }
 }
 
 #battery.critical:not(.charging) {
-	color: #f53c3c;
-	background-color: #ffffff;
-	animation-name: blink;
-	animation-duration: 0.5s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
+  color: #f53c3c;
+  background-color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 #battery.warning:not(.charging) {
-	color: #ffb300;
+  color: #ffb300;
 }
 
 label:focus {
-	color: #000000;
+  color: #000000;
 }
 
 #cpu {
-	color: #b6fa8c;
-	background-color: #282a36;
+  color: #ffb86c;
+  background-color: #282a36;
 }
 
 #user {
-	color: #ffa125;
-	background-color: #282a36;
+  color: #ffa125;
+  background-color: #282a36;
 }
 
 #memory {
-	color: #f1fa8c;
-	background-color: #282a36;
+  color: #f1fa8c;
+  background-color: #282a36;
 }
 
 #custom-top {
-	color: #dedede;
-	padding: 0px 8px 0px 2px;
-	margin: 0px 4px 0px 0px;
-	border-radius: 2px;
+  color: #dedede;
+  padding: 0px 8px 0px 2px;
+  margin: 0px 4px 0px 0px;
+  border-radius: 2px;
 }
 
 #backlight {
-	color: #90b1b1;
+  color: #90b1b1;
 }
 
 #network {
-	color: #adfa50;
-	background-color: #282a36;
-	padding-right: 14px;
+  color: #adfa50;
+  background-color: #282a36;
+  padding-right: 14px;
 }
 
 #bluetooth {
-	color: #1197b2;
+  color: #1197b2;
 }
 
 #bluetooth.off {
-	color: #0a5869;
-	background-color: #282a36;
+  color: #0a5869;
+  background-color: #282a36;
 }
 
 #network.disconnected {
-	color: #facd50;
-	background-color: #282a36;
+  color: #facd50;
+  background-color: #282a36;
 }
 
 #network.disabled {
-	color: #fa5050;
-	background-color: #282a36;
+  color: #fa5050;
+  background-color: #282a36;
 }
 
 #wireplumber,
 #pulseaudio,
 #custom-microphone {
-	color: #93eaf9;
-	background-color: #282a36;
+  color: #93eaf9;
+  background-color: #282a36;
 }
 
 #wireplumber.muted,
 #pulseaudio.muted,
 #custom-microphone.muted {
-	color: #41696f;
-	background-color: #282a36;
+  color: #41696f;
+  background-color: #282a36;
 }
 
 #custom-micInUse {
@@ -341,189 +343,190 @@ label:focus {
 }
 
 #custom-media.custom-spotify {
-	color: #66cc99;
+  color: #66cc99;
 }
 
 #custom-media.custom-vlc {
-	color: #ffa000;
+  color: #ffa000;
 }
 
 #custom-nvidia {
-	color: #65d800;
+  color: #65d800;
 }
 
-#temperature, #temperature.warning {
-	color: #ff79c6;
-	background-color: #282a36;
-	padding-left: 8px;
-	padding-right: 8px;
+#temperature,
+#temperature.warning {
+  color: #ff79c6;
+  background-color: #282a36;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 #temperature.critical {
-	color: #ff5555;
-	background-color: #282a36;
-	animation-name: blink;
-	animation-duration: 0.5s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
-	padding-left: 8px;
-	padding-right: 8px;
+  color: #ff5555;
+  background-color: #282a36;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 #custom-tray {
-	color: #bebebe;
-	background-color: #282a36;
-	padding: 0 2px;
+  color: #bebebe;
+  background-color: #282a36;
+  padding: 0 2px;
 }
 
 #tray {
-	color: rgba(243, 243, 243, 0.355);
+  color: rgba(243, 243, 243, 0.355);
 }
 
 #tray menu {
-	background-color: #282a36;
-	color: #f8f8f2;
-	border: 1px solid #44475a;
-	padding: 8px;
-	margin: 8px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-	border-radius: 8px;
+  background-color: #282a36;
+  color: #f8f8f2;
+  border: 1px solid #44475a;
+  padding: 8px;
+  margin: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
 }
 
 #tray menuitem {
-	padding: 4px;
+  padding: 4px;
 }
 
 #tray menuitem:hover {
-	background-color: #44475a;
+  background-color: #44475a;
 }
 
 #tray > .passive {
-	-gtk-icon-effect: dim;
+  -gtk-icon-effect: dim;
 }
 
 #tray > .needs-attention {
-	-gtk-icon-effect: highlight;
-	color: #eb4d4b;
+  -gtk-icon-effect: highlight;
+  color: #eb4d4b;
 }
 
 #idle_inhibitor.activated {
-	background-color: #ffbf00;
-	color: #050505;
+  background-color: #ffbf00;
+  color: #050505;
 }
 
 #idle_inhibitor {
-	color: #f8f8f2;
+  color: #f8f8f2;
 }
 
 #mpd {
-	color: #66cc99;
-	background-color: #2a5c45;
+  color: #66cc99;
+  background-color: #2a5c45;
 }
 
 #mpd.disconnected {
-	color: #f53c3c;
+  color: #f53c3c;
 }
 
 #mpd.stopped {
-	color: #90b1b1;
+  color: #90b1b1;
 }
 
 #mpd.paused {
-	color: #51a37a;
+  color: #51a37a;
 }
 
 #language {
-	color: #f8f8f2;
-	background-color: #282a36;
-	padding: 0 5px;
-	margin: 6px 3px;
-	min-width: 16px;
+  color: #f8f8f2;
+  background-color: #282a36;
+  padding: 0 5px;
+  margin: 6px 3px;
+  min-width: 16px;
 }
 
 #keyboard-state {
-	color: #97e1ad;
-	background-color: #000000;
-	padding: 0 0px;
-	margin: 0 5px;
-	min-width: 16px;
+  color: #97e1ad;
+  background-color: #000000;
+  padding: 0 0px;
+  margin: 0 5px;
+  min-width: 16px;
 }
 
 #keyboard-state > label {
-	padding: 0 5px;
+  padding: 0 5px;
 }
 
 #keyboard-state > label.locked {
-	background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 #custom-weather {
-	color: #8be9fd;
-	background-color: #282a36;
-	margin-right: 5;
+  color: #8be9fd;
+  background-color: #282a36;
+  margin-right: 5;
 }
 
 #disk {
-	color: #ffb86c;
-	background-color: #282a36;
+  color: #b6fa8c;
+  background-color: #282a36;
 }
 
 #sway-scratchpad {
-	color: #50fa7b;
-	background-color: #282a36;
+  color: #50fa7b;
+  background-color: #282a36;
 }
 
 #custom-notification {
-	font-family: "MesloLGS NF", monospace;
-	color: rgb(214, 214, 214);
+  font-family: "MesloLGS NF", monospace;
+  color: rgb(214, 214, 214);
 }
 
 #custom-notification.notification {
-	color: #e8a71c;
+  color: #e8a71c;
 }
 
 #custom-notification.dnd-inhibited-notification,
 #custom-notification.dnd-inhibited-none,
 #custom-notification.dnd-notification,
 #custom-notification.dnd-none {
-	color: #505050;
+  color: #505050;
 }
 
 #custom-logout {
-	background-color: #272727;
-	color: white;
+  background-color: #272727;
+  color: white;
 }
 
 #custom-logo {
-	color: #ffd21c;
-	transition: color .25s;
-	background-color: #282a36;
+  color: #ffd21c;
+  transition: color 0.25s;
+  background-color: #282a36;
 }
 
 #custom-logo:hover {
-	color: #75ff3f;
+  color: #75ff3f;
 }
 
 #power-profiles-daemon.power-saver {
-	color: #78ff09;
+  color: #78ff09;
 }
 #power-profiles-daemon.balanced {
-	color: #ffca09;
+  color: #ffca09;
 }
 #power-profiles-daemon.performance {
-	color: #ff4609;
+  color: #ff4609;
 }
 
 #custom-hyprsunset.on {
-	color: rgb(191, 138, 255);
+  color: rgb(191, 138, 255);
 }
 
 #custom-hyprsunset.off {
-	color: #ffb300;
+  color: #ffb300;
 }
 
 #privacy {
-	background-color: #ffdd00;
-	color: #050505;
+  background-color: #ffdd00;
+  color: #050505;
 }
