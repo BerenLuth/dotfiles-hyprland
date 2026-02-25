@@ -1,11 +1,9 @@
 /***
  *    ┏┓┓ ┏┏┓┓┏┳┓┏┓  ┏┓┓┏┏┓┳┓┏┓┏┓┳┓┏┓┏┓┏┳┓
- *    ┗┓┃┃┃┣┫┗┫┃┃┃ ━━┣ ┃┃┣ ┣┫┣ ┃┃┣┫┣ ┗┓ ┃ 
- *    ┗┛┗┻┛┛┗┗┛┛┗┗┛  ┗┛┗┛┗┛┛┗┻ ┗┛┛┗┗┛┗┛ ┻ 
- *                                        
+ *    ┗┓┃┃┃┣┫┗┫┃┃┃ ━━┣ ┃┃┣ ┣┫┣ ┃┃┣┫┣ ┗┓ ┃
+ *    ┗┛┗┻┛┛┗┗┛┛┗┗┛  ┗┛┗┛┗┛┛┗┻ ┗┛┛┗┗┛┗┛ ┻
+ *
  */
-
-
 
 /* Colors - Gruvbox Material Theme */
 @define-color background 	    #282828DD;
@@ -17,33 +15,46 @@
 @define-color fontcolor 	    #ebdbb2;
 @define-color fontaltcolor 	    #1d2021;
 
-
 /* Config */
 
 * {
-    font-family: "MesloLGS NF";
-    font-style: normal;
-    font-size: medium;
-  }
+  font-family: "MesloLGS NF";
+  font-style: normal;
+  font-size: medium;
+}
 
 /* Notification */
 
 .notification {
-    background: @background;
-    color: @fontcolor;
-    border: 2px solid @bordercolor;
-    border-radius: 8px;
-    padding: 8px;
+  background: @background;
+  color: @fontcolor;
+  border: 2px solid @bordercolor;
+  border-radius: 8px;
+  padding: 8px;
 }
 
-
 .notification-background {
-    padding: 8px 0px;
+  padding: 8px 0px;
 }
 
 .image {
   margin-right: 24px;
-  --gtk-icon-size: 48px;
+
+  min-width: 64px;
+  min-height: 64px;
+  max-width: 64px;
+  max-height: 64px;
+
+  border-radius: 9999px;
+
+  background-size: cover;
+  background-position: center;
+
+  -gtk-icon-transform: none;
+}
+
+.image image {
+  border-radius: 9999px;
 }
 
 /* Notification text */
@@ -91,9 +102,8 @@
 }
 
 .notification-action > button:hover {
-    color: @fontaltcolor;
-    background: @accent-normal;
-    
+  color: @fontaltcolor;
+  background: @accent-normal;
 }
 
 .notification.critical progress {
@@ -108,11 +118,11 @@
 /* Control Center */
 
 .control-center {
-    background-color: @background;
-    color: @fontcolor;
-    border: 2px solid @bordercolor;
-    padding: 2px;
-    /* box-shadow: inset 0px 00px 15px 0px rgba(66, 68, 90, 1); */
+  background-color: @background;
+  color: @fontcolor;
+  border: 2px solid @bordercolor;
+  padding: 2px;
+  /* box-shadow: inset 0px 00px 15px 0px rgba(66, 68, 90, 1); */
 }
 
 /* Notifications expanded-group */
@@ -139,40 +149,38 @@
 .notification-group-close-all-button {
   background: @accent-normal;
   color: @fontaltcolor;
-  margin-left: 2px; 
+  margin-left: 2px;
   border-radius: 6px;
   padding: 2px;
-  
 }
 
 .notification-group-collapse-button:hover,
 .notification-group-close-all-button:hover {
   background: @accent-error;
   color: @fontaltcolor;
-}  
-
+}
 
 /* widget title */
 .widget-title {
   color: @fontcolor;
 }
-.widget-title>button {
+.widget-title > button {
   font-size: 0.9rem;
   color: @fontcolor;
   background: @background-alt-darker;
   box-shadow: none;
 }
 
-.widget-title>button:hover {
+.widget-title > button:hover {
   background: @accent-error;
   color: @fontaltcolor;
 }
 
 /* widget button grid */
 button {
-    border: 0px;
-    min-width: 35px;
-    background: @background-alt;
+  border: 0px;
+  min-width: 35px;
+  background: @background-alt;
 }
 
 .widget-buttons-grid {
@@ -181,12 +189,12 @@ button {
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button {
-    color: @fontcolor;
-    margin: 0px;
-    padding: 18px;
+  color: @fontcolor;
+  margin: 0px;
+  padding: 18px;
 }
 
-.widget-buttons-grid>flowbox>flowboxchild>button:hover {
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
   background: alpha(@fontcolor, 0.55);
 }
 
@@ -195,32 +203,29 @@ button {
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked label {
-    color: @fontaltcolor;
+  color: @fontaltcolor;
 }
-
-
-
 
 /* dnd widget */
 .widget-dnd {
-  background:  @background-alt-darker;
+  background: @background-alt-darker;
   border: 1px solid transparent;
   font-size: medium;
   color: @fontcolor;
 }
 
-.widget-dnd>label {
+.widget-dnd > label {
   color: @fontcolor;
 }
 
-.widget-dnd>switch {
+.widget-dnd > switch {
   background: @background-alt;
   color: @fontcolor;
   border-radius: 6px;
   border: 2px solid transparent;
 }
 
-.widget-dnd>switch:checked {
+.widget-dnd > switch:checked {
   background: @accent-error;
 }
 
@@ -242,8 +247,6 @@ button {
 .widget-volume trough highlight {
   background: @accent-normal;
 }
-
-
 
 .widget-backlight {
   background: @background-alt-darker;
@@ -267,17 +270,15 @@ button {
   color: @fontaltcolor;
 }
 
-
 /* sliders in backlight and volume */
 
 trough slider {
-    background: @fontcolor;
+  background: @fontcolor;
 }
 
 trough slider:hover {
-    background: @accent-normal;
+  background: @accent-normal;
 }
-
 
 trough highlight {
   background: @accent-normal;
