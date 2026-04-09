@@ -10,11 +10,12 @@
 
 window#waybar {
   background: red;
-  background-color: rgba(41, 41, 41, 0.1);
+  background-color: rgba(41, 41, 41, 0.3);
   color: white;
   transition-property: color;
   transition-duration: 0.5s;
   border-radius: 8px;
+  /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
 }
 
 window#waybar.hidden {
@@ -208,7 +209,7 @@ window#waybar.empty #window {
 }
 
 #workspaces {
-  padding: 0 0 0 0px;
+  padding: 0 0 0 4px;
   background-color: rgba(0, 0, 0, 0);
 }
 
