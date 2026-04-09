@@ -10,6 +10,10 @@ OUTPUT_DIR="$HOME/Pictures/Screenshots/edited"
 mkdir -p "$OUTPUT_DIR"
 
 hyprshot -m ${1:-region} --raw |
+  flatpak run be.alexandervanhee.gradia
+
+exit 0
+hyprshot -m ${1:-region} --raw |
   satty --filename - \
     --output-filename "$OUTPUT_DIR/screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png" \
     --early-exit \
