@@ -3,11 +3,7 @@
 	"position": "top",
 	"height": 40,
 	"spacing": 2,
-	"margin": 4,
-	"margin-bottom": 0,
-	"margin-left": 6,
-	"margin-right": 6,
-	"margin-top": 2,
+	"margin": 6,
 	"mode": "dock",
 	"modules-left": [
 		"privacy",
