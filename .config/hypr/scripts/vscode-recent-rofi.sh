@@ -9,5 +9,5 @@ if [ -z "$selected" ]; then
   exit 1
 fi
 
-#code "$selected"
-zeditor "$selected"
+code "$selected"
+# zeditor "$selected"
