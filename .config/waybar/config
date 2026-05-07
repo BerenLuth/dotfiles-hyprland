@@ -150,7 +150,7 @@
 		},
 		"format": "{icon}",
 		"format-alt": "{icon} {capacity}%",
-		"format-warning": "󰂂 {capacity}%",
+		"format-warning": "󰁺 {capacity}%",
 		"format-charging": "󰂄 {capacity}%",
 		"format-plugged": "󰂄 {capacity}%",
 		"format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"],
