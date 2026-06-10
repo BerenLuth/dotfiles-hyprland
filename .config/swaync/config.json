@@ -78,6 +78,12 @@
 				{
 					"label": "",
 					"command": "swaync-client -cp && kitty --class=\"kitty-waybar-tool\" /usr/local/bin/bootnext windows now"
+				},
+				{
+					"label": "󰃟",
+					"type": "toggle",
+					"command": "/home/berenluth/.local/bin/brightness-ddcutil.sh",
+					"update-command": "/home/berenluth/.local/bin/brightness-ddcutil-is-100.sh"
 				}
 			]
 		}
