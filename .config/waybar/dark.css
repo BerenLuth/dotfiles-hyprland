@@ -5,7 +5,9 @@
   font-family:
     MesloLGS NF,
     monospace;
-  font-size: 15px;
+  font-size: 13px;
+  transition:
+    background-color 0.25s;
 }
 
 window#waybar {
