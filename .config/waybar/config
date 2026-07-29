@@ -10,7 +10,8 @@
 		"custom/micInUse",
 		"hyprland/submap",
 		"hyprland/workspaces",
-		"hyprland/window"
+		"hyprland/window",
+		"custom/music"
 	],
 	"modules-center": [
 		"clock"
@@ -304,9 +305,16 @@
 		"exec-if": "~/.config/waybar/scripts/shouldShowHyprsunset.sh",
 		"exec": "sleep 0.2 && ~/.config/hypr/scripts/hyprsunsetToggle.sh -g",
 		"on-click": "~/.config/hypr/scripts/hyprsunsetToggle.sh 4000k",
-		"on-click-right": "~/.config/hypr/scripts/hyprsunsetToggle.sh off",
 		"escape": true,
 		"interval": "once"
+	},
+	"custom/music": {
+		"exec-if": "which playerctl && ~/.config/waybar/scripts/playerctlModule.sh -i",
+		"exec": "~/.config/waybar/scripts/playerctlModule.sh -p",
+		"return-type": "json",
+		"on-click": "playerctl play-pause",
+		"format": "{text}",
+		"interval": 1
 	},
 	"custom/logout": {
 		"tooltip": false,
