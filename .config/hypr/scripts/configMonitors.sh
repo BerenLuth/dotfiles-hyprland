@@ -40,10 +40,16 @@ for name in "${MONITORS[@]}"; do
 done
 
 if [[ -n "$externalMonitor" ]]; then
-  # An external monitor is plugged in: it takes over as mainMonitor and the
-  # base monitor (laptop screen / desktop's DP-2) becomes the secondary one
-  mainMonitor="$externalMonitor"
-  secondaryMonitor="$baseMonitor"
+  if [[ "$baseMonitor" == "eDP-1" ]]; then
+    # Laptop: an external monitor takes over as mainMonitor, the laptop
+    # panel becomes the secondary one
+    mainMonitor="$externalMonitor"
+    secondaryMonitor="$baseMonitor"
+  else
+    # Desktop: DP-2 stays the mainMonitor, the external one is secondary
+    mainMonitor="$baseMonitor"
+    secondaryMonitor="$externalMonitor"
+  fi
 else
   mainMonitor="$baseMonitor"
   secondaryMonitor="$baseMonitor"
