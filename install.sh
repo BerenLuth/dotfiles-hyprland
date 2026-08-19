@@ -32,11 +32,11 @@ done
 
 echo "Installing hyprlock configuration..."
 # Create a symbolic link for hyprlock configuration
-src="$HOME/.config/hypr/hyprlock-same-bg.conf"
+src="$HOME/.config/hypr/hyprlock/hyprlock-minimal.conf"
 dst="$HOME/.config/hypr/hyprlock.conf"
 
 if [ ! -L "$dst" ]; then
-  ln -s "$src" "$dst"
+  cp "$src" "$dst"
 else
   echo "Hyprlock configuration already exists."
 fi
