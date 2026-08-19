@@ -82,7 +82,7 @@ hl.window_rule({
 hl.window_rule({
   name = "Telegram",
   match = {
-    title = "^(Telegram)$"
+    title = "Telegram.*"
   },
   workspace = "6",
   pseudo = false,
