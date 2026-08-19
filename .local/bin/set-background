@@ -48,6 +48,12 @@ echo "Changing Hyprland Colors."
   awk '{gsub(/#/,""); print "$color"NR-1" = rgb("$1")" }' ~/.cache/wal/colors
 } >~/.cache/wal/colors-hyprland.conf
 
+echo "Generating lua colors."
+echo "return {" > "$HOME/.cache/wal/colors.lua"
+awk '{print "  color" (NR-1) " = \"" $1 "\","}' \
+    "$HOME/.cache/wal/colors" >> "$HOME/.cache/wal/colors.lua"
+echo "}" >> "$HOME/.cache/wal/colors.lua"
+
 hyprctl hyprpaper unload "$WALL_PATH"
 hyprctl hyprpaper preload "$WALL_PATH"
 hyprctl hyprpaper wallpaper ",$WALL_PATH"
