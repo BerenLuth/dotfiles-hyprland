@@ -7,7 +7,7 @@ local function changeWorkspace(i)
     return "hyprctl dispatch 'hl.dsp.focus({ workspace = " .. i .. " })'"
 end
 
-hl.bind("CTRL + ALT + R", hl.dsp.exec_cmd("hyprctl reload"), { description = "Reload hyprland config" })
+hl.bind("CTRL + ALT + R", hl.dsp.exec_cmd("~/.config/hypr/scripts/configMonitors.sh && hyprctl reload"), { description = "Reload hyprland config" })
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd("kitty"), { description = "App: Terminal" })
 hl.bind(mainMod .. " + Q", hl.dsp.window.close(), { description = "Kill active window" })
 

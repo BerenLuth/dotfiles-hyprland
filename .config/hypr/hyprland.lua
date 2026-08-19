@@ -13,6 +13,8 @@ local mainMonitor = "eDP-1"
 require("monitors")
 require("execs")
 local colors = dofile(os.getenv("HOME") .. "/.cache/wal/colors.lua")
+local monitors = dofile(os.getenv("HOME") .. "/.config/hypr/custom/monitor.lua")
+
 
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
@@ -215,11 +217,11 @@ hl.gesture({ fingers = 4, direction = "left", action = function()
 
 -- Workspaces from 1 to 5 are assigned to monitor $mainMonitor
 for i = 1, 5 do
-  hl.workspace_rule({ workspace = tostring(i), monitor = mainMonitor})
+  hl.workspace_rule({ workspace = tostring(i), monitor = monitors.mainMonitor})
 end
 
 for i = 6, 10 do
-  hl.workspace_rule({ workspace = tostring(i), monitor = "$secondaryMonitor"})
+  hl.workspace_rule({ workspace = tostring(i), monitor = monitors.secondaryMonitor})
 end
 
 require("hyprbinds")
