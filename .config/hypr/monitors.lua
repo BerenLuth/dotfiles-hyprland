@@ -13,7 +13,7 @@ hl.monitor({
 })
 
 hl.monitor({
-  output = "HDMI-A-1",
+  output = "desc:Dell Inc. DELL S2415H 7JK8G69T3WKL",
   mode = "preferred",
   scale = 1,
   transform = 3,
