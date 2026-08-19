@@ -53,8 +53,8 @@ hl.bind("CTRL + ALT + K", hl.dsp.focus({ workspace = "e-1"}), { description = "M
 hl.bind(mainMod .. " + backslash", hl.dsp.focus({ workspace = "previous"}), { description = "Move to the previous workspace" })
 
 -- Change workspace (mouse)
-hl.bind("CTRL + ALT + mouse:276", hl.dsp.focus({ workspace = "r+1"}), { description = "Move to the next workspace (mouse side button)" })
-hl.bind("CTRL + ALT + mouse:275", hl.dsp.focus({ workspace = "r-1"}), { description = "Move to the previous workspace (mouse side button)" })
+hl.bind("CTRL + ALT + mouse:276", hl.dsp.focus({ workspace = "r-1"}), { description = "Move to the next workspace (mouse side button)" })
+hl.bind("CTRL + ALT + mouse:275", hl.dsp.focus({ workspace = "r+1"}), { description = "Move to the previous workspace (mouse side button)" })
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1"}), { description = "Move to the next active workspace (mouse)" })
 hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1"}), { description = "Move to the previous active workspace (mouse)" })
 
@@ -69,7 +69,7 @@ for i = 1, 10 do
     end, { description = "Workspace: Move window to " .. i })
 end
 
--- Manipulate windows within the current workspace 
+-- Manipulate windows within the current workspace
 for i = 1, 4 do
     local arrowkey = { "Left", "Right", "Up", "Down" }
     local focusdir = { "l", "r", "u", "d" }
@@ -123,11 +123,11 @@ hl.define_submap("󰏫 Edit", function ()
     hl.bind("SHIFT + up", hl.dsp.window.resize({ x = 0, y = fineResize, relative = true}), { repeating = true })
     hl.bind("SHIFT + down", hl.dsp.window.resize({ x = 0, y = -fineResize, relative = true}), { repeating = true })
 
-    -- move windows 
+    -- move windows
     for i = 1, 10 do
         hl.bind(tostring(i % 10), hl.dsp.window.move({ workspace = i, follow = true }), { description = "Move window to workspace " .. i })
         hl.bind("SHIFT + " .. tostring(i % 10), hl.dsp.window.move({ workspace = i, follow = false }), { description = "Move window to workspace without following it" .. i })
-    
+
     end
 
     hl.bind("ESCAPE", hl.dsp.submap("reset"), { description = "Exit edit mode" })
