@@ -21,6 +21,7 @@ hl.bind(mainMod .. " + P", hl.dsp.window.pseudo(), { description = "Toggle windo
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen(), { description = "Toggle window fullscreen" })
 hl.bind("ALT + TAB", hl.dsp.window.cycle_next(), { description = "Cycle to next window" })
 hl.bind(mainMod .. " + SHIFT + G", hl.dsp.group.toggle(), { description = "Toggle group" })
+hl.bind(mainMod .. " + SHIFT + J", hl.dsp.layout("togglesplit"))
 
 -- MOVE FOCUS WITH mainMod + arrow keys
 for i = 1, 4 do
