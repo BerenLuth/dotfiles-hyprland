@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=GDapps - local
+Comment=Development instance of gdapps
+Exec=chromium --app="http://localhost:3000"
+Terminal=false
+Type=Application
+Icon=tool
+StartupNotify=false
+MimeType=application/x-ipynb+json;
+Categories=Development;
+Keywords=gdapps,sunshine,sunrise,dev

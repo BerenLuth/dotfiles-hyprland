@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=GDapps
+Comment=Development instance of gdapps
+Exec=chromium --app="https://gdapps.eu"
+Terminal=false
+Type=Application
+Icon=gnome-web
+StartupNotify=false
+MimeType=application/x-ipynb+json;
+Categories=Development;
+Keywords=gdapps,sunshine,sunrise,dev
