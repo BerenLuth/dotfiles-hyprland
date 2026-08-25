@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Microsoft ToDo
+Comment=To-do web application to manage tasks
+Exec=chromium --app="https://to-do.live.com/tasks/myday"
+Terminal=false
+Type=Application
+Icon=weektodo
+StartupNotify=false
+MimeType=application/x-ipynb+json;
+Categories=Misc;
+Keywords=todo, task, microsoft

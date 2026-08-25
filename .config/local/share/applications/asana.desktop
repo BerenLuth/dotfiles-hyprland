@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Asana
+Comment=To-do web application to manage work tasks
+Exec=chromium --app="https://app.asana.com/1/423787392386326/project/1133468030513616/list/1208025421944244"
+Terminal=false
+Type=Application
+Icon=opentodolist
+StartupNotify=false
+MimeType=application/x-ipynb+json;
+Categories=Misc;
+Keywords=todo, task, asana, work

@@ -6,6 +6,8 @@ local terminal = "kitty"
 
 hl.workspace_rule({ workspace = "special:magic", on_created_empty = terminal .. " --class=\"magic-terminal\" tmux new-session -A -s magic" })
 hl.workspace_rule({ workspace = "special:music", on_created_empty = "feishin"})
+hl.workspace_rule({ workspace = "special:todo", on_created_empty = "chromium --app=\"https://to-do.live.com/tasks/myday\""})
+hl.workspace_rule({ workspace = "special:ai-chat", on_created_empty = "chromium --app=\"https://chatgpt.com\""})
 hl.workspace_rule({ workspace = "6", on_created_empty = "Telegram | telegram-desktop" })
 hl.workspace_rule({ workspace = "4", on_created_empty = terminal .. " --class=\"git-terminal\""})
 
@@ -174,6 +176,15 @@ hl.window_rule({
 })
 
 hl.window_rule({
+  name = "asana",
+  match = {
+    class = "chrome-app.asana.com__1_423787392386326_project_1133468030513616_list_1208025421944244-Default"
+  },
+  workspace = "5",
+  pseudo = false,
+})
+
+hl.window_rule({
   name = "localsend",
   match = {
     class = "org.localsend.localsend_app"
@@ -279,8 +290,45 @@ hl.window_rule({
   },
   float = true,
   size = { 800, 500 },
-  move = { "monitor_w-832", 54 },
+  move = { "monitor_w-816", 54 },
   rounding = 16,
+})
+
+hl.window_rule({
+    name = "Birocio webapps",
+    match = {
+        class = "chrome-192.168.1.11__-Default",
+    },
+    float = true,
+    pin = true,
+    size = { 500, 800 },
+    move = { "monitor_w-516", 54 },
+    rounding = 16,
+})
+
+hl.window_rule({
+    name = "Microsoft todo",
+    match = {
+        class = "chrome-to-do.live.com__tasks_myday-Default",
+    },
+    float = true,
+    size = { 500, "monitor_h-32" },
+    move = { "monitor_w-516", 16 },
+    rounding = 16,
+    workspace = "special:todo"
+})
+
+hl.window_rule({
+    name = "Chatgpt",
+    match = {
+        class = "chrome-chatgpt.com__-Default",
+    },
+    float = false,
+    pseudo = true,
+    size = { "monitor_w-monitor_w*0.2", "monitor_h-100" },
+    center = true,
+    rounding = 16,
+    workspace = "special:ai-chat"
 })
 
 

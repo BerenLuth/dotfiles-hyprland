@@ -219,7 +219,7 @@ hl.bind("CTRL + ALT + print", hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot
 hl.bind(mainMod .. " + SHIFT + K", hl.dsp.exec_cmd("org.keepassxc.KeePassXC || keepassxc"), { description = "Launch keepass" })
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("zen-browser"), { description = "Open the browser" })
 hl.bind(mainMod .. " + O", hl.dsp.exec_cmd(changeWorkspace(3) .." && pgrep -x obsidian || flatpak run md.obsidian.Obsidian || obsidian"), { description = "Switch to workspace 3 and open obsidian" })
-hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(mailClient), { description = "Open the mail client" })
+hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd(mailClient), { description = "Open the mail client" })
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(changeWorkspace(6)), { description = "Switch to workspace 6 (chat)" })
 hl.bind(mainMod .. " + G", hl.dsp.exec_cmd(changeWorkspace(4)), { description = "Switch to workspace 4 (git)" })
 
@@ -227,7 +227,7 @@ hl.bind(mainMod .. " + G", hl.dsp.exec_cmd(changeWorkspace(4)), { description = 
 -- UTILITIES --
 ---------------
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("~/.config/hypr/scripts/restart-waybar.sh & swaync-client -rs"), { description = "Restart waybar and swaync" })
-hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("~/.config/hypr/scripts/setWaybarDark.sh"), { description = "Set waybar dark theme" })
+-- hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("~/.config/hypr/scripts/setWaybarDark.sh"), { description = "Set waybar dark theme" })
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"), { description = "Open notification center" })
 hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("swaync-client -d -sw"), { description = "Toggle Do not disturb" })
 hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("kitty --class=\"kitty-waybar-tool\" nmtui"), { description = "Open nmtui" })
@@ -238,7 +238,19 @@ hl.bind(mainMod .. " + X", hl.dsp.exec_cmd(changeWorkspace(2)), { description = 
 hl.bind(mainMod .. " + SHIFT + X", hl.dsp.exec_cmd(" ~/.config/hypr/scripts/vscode-recent-rofi.sh"), { description = "Open rofi recent projects" })
 hl.bind(mainMod .. " + CTRL + B", hl.dsp.exec_cmd("bongocat -c ~/.config/bongocat/bongocat.conf -w -t"), { description = "Toggle bongocat" })
 hl.bind("XF86Calculator", hl.dsp.exec_cmd("gnome-calculator || galculator"), { description = "Open calculator" })
-hl.bind(mainMod .. " + U", hl.dsp.exec_cmd("hyprpicker -a && notify-send \" Color copied to clipboard\" \"$(wl-paste)\" -e"), { description = "Open hyprpicker and copy the result to the clipboard" })
+hl.bind(mainMod .. " + U",
+    hl.dsp.exec_cmd("hyprpicker -a && notify-send \" Color copied to clipboard\" \"$(wl-paste)\" -e"),
+    { description = "Open hyprpicker and copy the result to the clipboard" })
+
+--------------
+-- Web Apps --
+--------------
+hl.bind(mainMod .. " + SHIFT + H", hl.dsp.exec_cmd("chromium --app=\"http://192.168.1.11:30103/\""), { description = "Open home assistant webapp"})
+hl.bind(mainMod .. " + SHIFT + U", hl.dsp.exec_cmd("chromium --app=\"http://192.168.1.11:30041/\""), { description = "Open immich webapp"})
+-- hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("chromium --app=\"https://to-do.live.com/tasks/myday\""), { description = "Open microsoft todo webapp"})
+hl.bind(mainMod .. " + T", hl.dsp.workspace.toggle_special("todo"), { description = "Open the todo workspace" })
+hl.bind(mainMod .. " + code:61", hl.dsp.workspace.toggle_special("ai-chat"), { description = "Open the ai-chat workspace" })
+
 
 
 -- Power button
