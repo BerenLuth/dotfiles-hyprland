@@ -38,7 +38,11 @@ hl.config({
 
     allow_tearing = false,
 
-    layout = "dwindle"
+    layout = "dwindle",
+
+    snap = {
+      enabled = false,
+    }
   },
 
   decoration = {
@@ -63,7 +67,25 @@ hl.config({
 
       vibrancy = 0.1696,
       xray = false,
+
+      variant = acrylic,
+
+      special = true,
+    },
+
+    motion_blur = {
+      enabled = false,
+    },
+
+    glow = {
+      enabled = false,
     }
+
+  },
+
+
+  binds = {
+    hide_special_on_workspace_change = true,
   },
 
   animations = {
@@ -97,7 +119,7 @@ hl.config({
   input = {
     kb_layout = "it",
     kb_options = "caps:escape_shifted_capslock",
-    
+
     follow_mouse = 1,
 
     sensitivity = 0,

@@ -1,7 +1,7 @@
 local mainMod = "SUPER"
 local fileManager = "nautilus"
 local menu        = "~/.config/rofi/launchers/type-1/launcher.sh"
-local mailClient  = "thunderbird"
+local mailClient  = "betterbird"
 
 local function changeWorkspace(i)
     return "hyprctl dispatch 'hl.dsp.focus({ workspace = " .. i .. " })'"
@@ -57,7 +57,12 @@ hl.bind(mainMod .. " + backslash", hl.dsp.focus({ workspace = "previous"}), { de
 hl.bind("CTRL + ALT + mouse:276", hl.dsp.focus({ workspace = "r-1"}), { description = "Move to the next workspace (mouse side button)" })
 hl.bind("CTRL + ALT + mouse:275", hl.dsp.focus({ workspace = "r+1"}), { description = "Move to the previous workspace (mouse side button)" })
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1"}), { description = "Move to the next active workspace (mouse)" })
-hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1"}), { description = "Move to the previous active workspace (mouse)" })
+hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }),
+    { description = "Move to the previous active workspace (mouse)" })
+
+-- Change workspace (mouse)
+hl.bind(mainMod .. " + mouse:276", hl.dsp.workspace.toggle_special("magic"), { description = "Move to the next workspace (mouse side button)" })
+hl.bind(mainMod .. " + mouse:275", hl.dsp.workspace.toggle_special("music"), { description = "Move to the previous workspace (mouse side button)" })
 
 
 -- Move window to workspace

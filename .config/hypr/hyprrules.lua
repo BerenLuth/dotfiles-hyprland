@@ -27,7 +27,7 @@ hl.window_rule({ match = { float = false, workspace = "f[1]" }, rounding = 0 })
 hl.window_rule({
   name = "coding tools",
   match = {
-    class = "^(codium|code|code-oss|zed)$"
+    class = "^(codium|code|code-oss|dev.zed.Zed)$"
   },
   workspace = "2",
 })
@@ -43,7 +43,7 @@ hl.window_rule({
 hl.window_rule({
   name = "Mail client",
   match = {
-    class = "^(org.mozilla.Thunderbird|betterbird)$"
+    class = "^(org.mozilla.Thunderbird|eu.betterbird.Betterbird)$"
   },
   workspace = "5",
 })
@@ -53,7 +53,8 @@ hl.window_rule({
   match = {
     class = "^(feishin|Spotify)$"
   },
-  workspace = "special:music",
+    workspace = "special:music",
+  pseudo = true,
 })
 
 hl.window_rule({
@@ -377,6 +378,7 @@ hl.layer_rule({
     blur = true,
     ignore_alpha = 0,
     dim_around = true,
+    blur_popups = true,
 })
 
 hl.layer_rule({
@@ -384,6 +386,6 @@ hl.layer_rule({
     match = {
         namespace = "waybar"
     },
-    blur = true,
+    blur = false,
     ignore_alpha = 0,
 })
