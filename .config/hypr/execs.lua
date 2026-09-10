@@ -30,5 +30,3 @@ hl.on("hyprland.start", function ()
   -- exec-once = bongocat -c ~/.config/bongocat/bongocat.conf &
 
   -- Cursor
-  hl.exec_cmd("hyprctl setcursor Adwaita 24")
-end)
