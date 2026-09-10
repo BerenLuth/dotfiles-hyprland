@@ -14,6 +14,8 @@ hl.on("hyprland.start", function ()
 
   hl.exec_cmd("sleep 2 && keepassxc &")
   hl.exec_cmd("sleep 3 && nm-online --quiet --timeout 120 && megasync --minimized")
+  hl.exec_cmd("sleep 3 && nm-online --quiet --timeout 120 && rclone --vfs-cache-mode writes mount \"onedrive\":  ~/OneDrive")
+
 
   -- Disable bluetooth on startup
   hl.exec_cmd("bluetoothctl list | grep -q \"Controller\" && bluetoothctl power off")
