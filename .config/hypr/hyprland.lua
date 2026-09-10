@@ -15,7 +15,8 @@ require("execs")
 local colors = dofile(os.getenv("HOME") .. "/.cache/wal/colors.lua")
 local monitors = dofile(os.getenv("HOME") .. "/.config/hypr/custom/monitor.lua")
 
-
+hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Classic")
+hl.env("XCURSOR_THEME", "Bibata-Modern-Classic")
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 
@@ -45,6 +46,10 @@ hl.config({
     }
   },
 
+  xwayland = {
+    force_zero_scaling = true,
+  },
+
   decoration = {
     rounding = 8,
     rounding_power = 2,
@@ -68,9 +73,12 @@ hl.config({
       vibrancy = 0.1696,
       xray = false,
 
-      variant = acrylic,
+      variant = kawase,
 
       special = true,
+      -- acrylic = {
+      --   aberration = 0.25,
+      -- }
     },
 
     motion_blur = {
