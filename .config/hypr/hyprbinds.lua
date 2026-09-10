@@ -27,19 +27,19 @@ hl.bind(mainMod .. " + SHIFT + J", hl.dsp.layout("togglesplit"))
 for i = 1, 4 do
     local arrowkey = { "Left", "Right", "Up", "Down" }
     local focusdir = { "l", "r", "u", "d" }
-    hl.bind("SUPER + " .. arrowkey[i], hl.dsp.focus({ direction = focusdir[i] }),
+    hl.bind(mainMod .. " + " .. arrowkey[i], hl.dsp.focus({ direction = focusdir[i] }),
         { description = "Window: Focus " .. arrowkey[i] })
 end
 
 for i = 1, 4 do
     local vimKey = { "H", "L", "K", "J" }
     local focusdir = { "l", "r", "u", "d" }
-    hl.bind("SUPER + " .. vimKey[i], hl.dsp.focus({ direction = focusdir[i] }),
+    hl.bind(mainMod .. " + " .. vimKey[i], hl.dsp.focus({ direction = focusdir[i] }),
         { description = "Window: Focus " .. vimKey[i] })
 end
 
 for i = 1, 10 do
-    hl.bind("SUPER + " .. (i % 10), function()
+    hl.bind(mainMod .. " + " .. (i % 10), function()
         hl.dispatch(hl.dsp.focus({ workspace = i }))
     end, { description = "Workspace: Focus " .. i })
 end
@@ -82,6 +82,8 @@ for i = 1, 4 do
     hl.bind(mainMod .. " + SHIFT + " .. arrowkey[i], hl.dsp.window.swap({ direction = focusdir[i] }),
         { description = "Window: Swap the current window with the one to the " .. arrowkey[i] })
 end
+
+hl.bind(mainMod .. " + TAB", hl.dsp.window.swap({ prev = ""}))  -- hl.dsp.window.swap({ with = 'prev' }))
 
 -- LOCKSCREEN
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd("loginctl lock-session && openrgb -m static -c 220000"), { description = "Lock the screen and set the led strip to red" })
