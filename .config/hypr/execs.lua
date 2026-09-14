@@ -14,7 +14,17 @@ hl.on("hyprland.start", function ()
 
   hl.exec_cmd("sleep 2 && keepassxc &")
   hl.exec_cmd("sleep 3 && nm-online --quiet --timeout 120 && megasync --minimized")
-  hl.exec_cmd("sleep 3 && nm-online --quiet --timeout 120 && rclone --vfs-cache-mode writes mount \"onedrive\":  ~/OneDrive")
+  hl.exec_cmd("sleep 3 && \
+    nm-online --quiet --timeout 120 && \
+    rclone mount \"onedrive\": ~/OneDrive \
+      --vfs-cache-mode full \
+      --cache-dir ~/.cache/rclone \
+      --vfs-cache-max-size 50G \
+      --vfs-cache-max-age 24h \
+      --vfs-cache-poll-interval 1m \
+      --dir-cache-time 10m \
+      --poll-interval 1m"
+  )
 
 
   -- Disable bluetooth on startup
@@ -32,3 +42,4 @@ hl.on("hyprland.start", function ()
   -- Cursor
   hl.exec_cmd("hyprctl setcursor Bibata-Modern-Classic 22")
 end)
+

@@ -269,3 +269,8 @@ hl.bind("XF86PowerOff", hl.dsp.exec_cmd("pgrep -a wlogout && killall -w wlogout 
 hl.on("hyprland.shutdown", function ()
   hl.exec_cmd([[kill -9 "$(cat /tmp/.hyprland-systemd-inhibit)"]])
 end)
+
+-- HANDY
+hl.bind("CTRL + ALT + X", function()
+    hl.exec_cmd("pkill -USR2 -x handy")
+end)
