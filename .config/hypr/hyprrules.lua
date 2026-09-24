@@ -1,5 +1,12 @@
 local terminal = "kitty"
 
+local screenMarginTop = 16
+local screenMarginRight = 64
+local toolWidth = 800
+local toolHeight = 500
+local topRightToolPosition = { "monitor_w-".. toolWidth + screenMarginRight, screenMarginTop }
+
+
 ---------------------
 -- WORKSPACE RULES --
 ---------------------
@@ -49,11 +56,23 @@ hl.window_rule({
 })
 
 hl.window_rule({
+    name = "Thunderbird write window",
+    match = {
+      initial_title = "^(Write: .+no subject.+)$"
+    },
+    workspace = 5,
+    float = true,
+    center = true,
+    size = { 1000, 850 }
+})
+
+hl.window_rule({
   name = "Music player",
   match = {
     class = "^(feishin|Spotify)$"
   },
     workspace = "special:music",
+  size = { 1150, 900 },
   pseudo = true,
 })
 
@@ -129,8 +148,8 @@ hl.window_rule({
         class = "kitty-waybar-tool"
     },
     float = true,
-    size = { 800, 500 },
-    move = { "monitor_w-window_w-16", 54 },
+    size = { toolWidth, toolHeight },
+    move = topRightToolPosition,
     xray = true,
     pin = true,
 })
@@ -163,7 +182,7 @@ hl.window_rule({
     title = "MEGAsync",
   },
   float = true,
-  move = { "cursor_x-window_w*0.5", 48 },
+  move = { "monitor_w-window_w-48", "cursor_y" },
 })
 
 hl.window_rule({
@@ -171,9 +190,20 @@ hl.window_rule({
   match = {
     class = "^(obsidian|md.obsidian.Obsidian)$"
   },
-  workspace = "3",
+    workspace = "3",
+  group = "set",
   pseudo = true,
   size = { "monitor_w*0.8", "monitor_h*0.9" },
+  opaque = true,
+})
+
+hl.window_rule({
+  name = "Zotero",
+  match = {
+    class = "^(Zotero)$"
+    },
+  group = "set",
+  workspace = "3",
 })
 
 hl.window_rule({
@@ -303,7 +333,7 @@ hl.window_rule({
     float = true,
     pin = true,
     size = { 500, 800 },
-    move = { "monitor_w-516", 54 },
+    move = { "monitor_w-500-"..screenMarginRight, screenMarginTop },
     rounding = 16,
 })
 
@@ -386,6 +416,6 @@ hl.layer_rule({
     match = {
         namespace = "waybar"
     },
-    blur = false,
+    blur = true,
     ignore_alpha = 0,
 })

@@ -1,16 +1,15 @@
 {
 	"layer": "bottom",
-	"position": "right",
-	"width": 30,
+	"position": "top",
+	"height": 36,
 	"spacing": 2,
-	"margin": 0,
-	"margin-left": 0,
+	"margin": 6,
 	"mode": "dock",
 	"modules-left": [
 		"privacy",
 		"custom/micInUse",
-    "hyprland/workspaces",
 		"hyprland/submap",
+		"hyprland/workspaces",
 		"hyprland/window",
 		"custom/music"
 	],
@@ -29,7 +28,6 @@
 		"group/power"
 	],
 	"custom/tray": {
-		"rotate": 270,
 		"tooltip": false,
 		"format": "{icon}",
 		"format-icons": {
@@ -37,7 +35,7 @@
 		}
 	},
 	"group/tray": {
-		"orientation": "vertical",
+		"orientation": "horizontal",
 		"drawer": {
 			"transition-duration": 500,
 			"children-class": "not-power",
@@ -50,7 +48,7 @@
 		]
 	},
 	"group/hw": {
-		"orientation": "vertical",
+		"orientation": "horizontal",
 		"drawer": {
 			"transition-duration": 500,
 			"children-class": "not-power",
@@ -66,7 +64,7 @@
 		]
 	},
 	"group/monitor": {
-		"orientation": "vertical",
+		"orientation": "horizontal",
 		"drawer": {
 			"transition-duration": 500,
 			"children-class": "not-power",
@@ -75,13 +73,11 @@
 		"modules": ["cpu", "custom/nvidia"]
 	},
 	"group/power": {
-		"orientation": "vertical",
+		"orientation": "horizontal",
 		"drawer": {
 			"transition-duration": 500,
 			"children-class": "not-power",
-			"transition-left-to-right": false,
-
-	    "justify": "center",
+			"transition-left-to-right": false
 		},
 		"modules": [
 			"custom/logout",
@@ -92,7 +88,7 @@
 		]
 	},
 	"group/audio": {
-		"orientation": "vertical",
+		"orientation": "horizontal",
 		"drawer": {
 			"transition-duration": 500,
 			"children-class": "not-power",
@@ -104,7 +100,6 @@
 		"format": "{}"
 	},
 	"hyprland/window": {
-		"rotate": 270,
 		"format": "{initialTitle:.25}",
 		"max-length": 25,
 		"tooltip-format": "{title}",
@@ -127,27 +122,24 @@
 	},
 	"cpu": {
 		"interval": 10,
-		"format": " \n{usage}%",
-	  "justify": "center",
+		"format": " {usage}%"
 	},
 	"memory": {
 		"interval": 30,
-		"format": "\n{percentage}%",
+		"format": " {percentage}%",
 		"tooltip": true,
-		"tooltip-format": "RAM: {used:0.1f} / {total:0.1f} GB",
-	  "justify": "center",
+		"tooltip-format": "RAM: {used:0.1f} / {total:0.1f} GB"
 	},
 	"temperature": {
 		"critical-threshold": 75,
 		"warning-threshold": 55,
 		"format": "",
-		"format-warning": "\n{temperatureC}°",
-		"format-critical": "󰈸\n{temperatureC}°",
+		"format-warning": " {temperatureC}°",
+		"format-critical": "󰈸 {temperatureC}°",
 		"hwmon-path": [
 			"/sys/class/hwmon/hwmon2/temp1_input",
 			"/sys/class/thermal/thermal_zone0/temp"
-		],
-		"justify": "center",
+		]
 	},
 	"battery": {
 		"bat": "BAT0",
@@ -158,25 +150,24 @@
 			"critical": 15
 		},
 		"format": "{icon}",
-		"format-alt": "{icon}\n{capacity}%",
-		"format-warning": "󰁺\n{capacity}%",
-		"format-charging": "󰂄\n{capacity}%",
-		"format-plugged": "󰂄\n{capacity}%",
+		"format-alt": "{icon} {capacity}%",
+		"format-warning": "󰁺 {capacity}%",
+		"format-charging": "󰂄 {capacity}%",
+		"format-plugged": "󰂄 {capacity}%",
 		"format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"],
-		"on-click-right": "kitty --class=\"kitty-waybar-tool\" battop",
-	  "justify": "center",
+		"on-click-right": "kitty --class=\"kitty-waybar-tool\" battop"
 	},
 	"network": {
 		"format": "{icon}",
 		"format-icons": {
 			"default": ["󰤟", "󰤢", "󰤥", "󰤨"]
 		},
-		"format-wifi": "{icon}",
-		"format-ethernet": "󰈀",
-		"format-disconnected": "󱛇",
-		"format-linked": "{icon}\n󰯄 VPN",
-		"format-disabled": "󱞐",
-		"tooltip-format-wifi": "{essid}\n---\nStrenght: {signalStrength}%\nFrequency: {frequency}\nIP: {ipaddr}",
+		"format-wifi": "{icon} {essid}",
+		"format-ethernet": "󰈀 Eth",
+		"format-disconnected": "󱛇 Connecting",
+		"format-linked": "{icon} / 󰯄 VPN on",
+		"format-disabled": "󱞐 Offline",
+		"tooltip-format-wifi": "Strenght: {signalStrength}%\nFrequency: {frequency}\nIP: {ipaddr}",
 		"tooltip-format-ethernet": "Network: {ifname}\nIP: {ipaddr}",
 		"tooltip-format-disconnected": "Disconnected",
 		"tooltip-format-linked": "Network: {ifname}\nIP: {ipaddr}\nVPN on",
@@ -189,10 +180,10 @@
 			"off": "󰂲",
 			"default": ["󰤾", "󰥁", "󰥄", "󰥈"]
 		},
-		"format-connected": "󰂱",
-		"format-connected-battery": "{icon}",
+		"format-connected": "{icon} {device_alias:.7}",
+		"format-connected-battery": "{icon} {device_alias:.7}",
 		"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-		"tooltip-format-connected": "{device_alias}\n---\n{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
 		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
 		"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
 		"on-click": "kitty --class=\"kitty-waybar-tool\" bluetuith",
@@ -200,8 +191,8 @@
 		"max-length": 20
 	},
 	"clock": {
-		"format": "{:%H\n%M}",
-		"format-alt": "{:%H\n%M\n\n%d\n%m\n%y}",
+		"format": "{:%H:%M}",
+		"format-alt": "{:%R | %d %b %Y}",
 		"tooltip-format": "<tt><small>{calendar}</small></tt>",
 		"calendar": {
 			"mode": "year",
@@ -234,17 +225,16 @@
 		"format-muted": "\uf00d {volume}%"
 	},
 	"wireplumber": {
-		"format": "{icon}\n{volume}%",
+		"format": "{icon} {volume}%",
 		"format-icons": {
 			"default": ["", "", ""]
 		},
-		"format-muted": "\n{volume}%",
+		"format-muted": " {volume}%",
 		"on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
 		"on-click-right": "~/.config/waybar/scripts/audioOutputSwitcher.py",
 		"on-click-middle": "hyprctl dispatch submap  Audio",
 		"max-volume": 100,
-		"scroll-step": 2,
-	  "justify": "center",
+		"scroll-step": 2
 	},
 	"custom/microphone": {
 		"exec": "~/.config/waybar/scripts/audioSourceStatus.sh",
@@ -253,8 +243,7 @@
 		"on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 2%- --limit 1",
 		"on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
 		"on-click-right": "~/.config/hypr/scripts/micSwitcher.py",
-		"interval": 1,
-		"justify": "center",
+		"interval": 1
 	},
 	"tray": {
 		"icon-size": 20,
@@ -303,7 +292,7 @@
 		"exec": "swaync-client -swb",
 		"on-click": "swaync-client -t -sw",
 		"on-click-right": "swaync-client -d -sw",
-		"escape": true,
+		"escape": true
 	},
 	"custom/hyprsunset": {
 		"tooltip": "Hyprsunset 4000k",
@@ -318,11 +307,9 @@
 		"exec": "sleep 0.2 && ~/.config/hypr/scripts/hyprsunsetToggle.sh -g",
 		"on-click": "~/.config/hypr/scripts/hyprsunsetToggle.sh 4000k",
 		"escape": true,
-		"interval": "once",
-		"justify":"center",
+		"interval": "once"
 	},
 	"custom/music": {
-		"rotate": 270,
 		"exec-if": "which playerctl && ~/.config/waybar/scripts/playerctlModule.sh -i",
 		"exec": "~/.config/waybar/scripts/playerctlModule.sh -p",
 		"return-type": "json",
@@ -334,15 +321,11 @@
 		"tooltip": false,
 		"format": "{icon}",
 		"format-icons": {
-			"default": ""
+			"default": "  "
 		},
-		"on-click": "wlogout",
-	  "justify": "center",
-		"align": 0.5,
-		"expand": true,
+		"on-click": "wlogout"
 	},
 	"custom/top": {
-		"rotate": 270,
 		"tooltip": false,
 		"format": "{icon}",
 		"format-icons": {
@@ -351,7 +334,6 @@
 		"on-click": "kitty --class=\"kitty-waybar-tool\" gotop --nvidia"
 	},
 	"hyprland/submap": {
-		"rotate": 270,
 		"format": "{} mode",
 		"max-length": 15,
 		"tooltip": false,
@@ -371,19 +353,16 @@
 	},
 	"backlight": {
 		"device": "intel_backlight",
-		"format": "{icon}\n{percent}%",
+		"format": "{icon} {percent}%",
 		"scroll-step": 5,
-		"format-icons": ["", "", ""],
-		"justify": "center"
+		"format-icons": ["", "", ""]
 	},
 	"disk": {
 		"interval": 30,
-		"format": "\n{percentage_free}%",
-		"path": "/",
-	  "justify": "center",
+		"format": " {percentage_free}%",
+		"path": "/"
 	},
 	"custom/nvidia": {
-		"rotate": 270,
 		"exec": "nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,nounits,noheader | sed 's/\\([0-9]\\+\\), \\([0-9]\\+\\)/󰢮 \\1%  \\2°C/g'",
 		"format": "GPU: {}",
 		"interval": 10,

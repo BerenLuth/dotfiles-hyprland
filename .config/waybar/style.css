@@ -1,0 +1,125 @@
+/* Vertical (left) variant of the waybar theme.
+ * Reuses all colors/rules from dark.css and only overrides layout:
+ * the bar runs top-to-bottom on the left edge, so every module's
+ * text is rotated 270deg and paddings are swapped from
+ * left/right to top/bottom. */
+@import url("dark.css");
+
+window#waybar {
+  border-radius: 0px;
+}
+
+/* Text rotation is handled per-module via the "rotate": 270 property
+ * in config-vertical (waybar(5) "Rotating modules") -- GTK3's CSS
+ * engine has no generic transform property for label text, so it
+ * can't be done here. */
+
+/* Swap the horizontal padding used in the horizontal bar for
+ * vertical padding, now that modules stack top-to-bottom. */
+#window,
+#submap,
+#user,
+#workspaces,
+#clock,
+#battery,
+#hw,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-microphone,
+#custom-weather,
+#tray,
+#mode,
+#idle_inhibitor,
+#custom-notification,
+#custom-logout,
+#custom-logo,
+#custom-hyprsunset,
+#custom-nvidia,
+#custom-tray,
+#sway-scratchpad,
+#bluetooth,
+#power-profiles-daemon,
+#custom-micInUse,
+#privacy,
+#temperature,
+#custom-music,
+#mpd {
+  padding: 6px 0px;
+  margin: 2px 6px;
+}
+
+#cpu,
+#memory,
+#temperature,
+#disk {
+  padding: 0px 0;
+}
+
+#window {
+  padding: 12px 0;
+}
+
+#workspaces {
+  padding: 4px 0 0 6px;
+}
+
+#workspaces button {
+  padding: 0.4em 0em;
+  margin: 0.1em 0em;
+  color: rgba(166, 176, 184, 0.764);
+  background-color: rgba(17, 17, 17, 1);
+  font-size: medium;
+  border-radius: 8px;
+  border: 0px solid transparent;
+  transition:
+    background-color 0.25s,
+    color 0.25s,
+    min-width 0.25s;
+}
+
+
+/* If workspaces is the topmost module, omit top margin */
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+  margin-top: 0;
+}
+
+/* If workspaces is the bottommost module, omit bottom margin */
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+#network {
+  padding-right: 0;
+}
+
+#temperature,
+#temperature.warning,
+#temperature.critical {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+#custom-top {
+  padding: 2px 0 8px 0;
+  margin: 0 0 4px 0;
+}
+
+#custom-tray {
+  padding: 0.3em 0;
+  margin: 0.1em 0
+}
+
+#custom-logout {
+  margin-bottom: 4px;
+}
+
+
+#custom-logout label,#custom-notification label, #custom-hyprsunset label, #custom-micInUse label, #custom-microphone label {
+  min-width: 36px; /* Same as bar width */
+}

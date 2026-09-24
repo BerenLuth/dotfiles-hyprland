@@ -51,6 +51,30 @@ hl.config({
     force_zero_scaling = true,
   },
 
+  group = {
+    groupbar = {
+            blur = true,
+            gradient_rounding = 16,
+            gradient_round_only_edges = false,
+            text_color = "rgba(000000ff)",
+            text_color_inactive = "rgba(000000dd)",
+            font_size = 15,
+            height = 24,
+            font_weight_active = "bold",
+            indicator_height = 0,
+            rounding = 10,
+            gradients = true,
+            gaps_out = 4,
+            gaps_in = 4,
+            disable_when_only = true,
+      col = {
+                -- active = colors.color1,
+        active = "rgba(FCCA0588)",
+        inactive = "rgba(00000033)",
+      }
+    }
+  },
+
   decoration = {
     rounding = 8,
     rounding_power = 2,
@@ -61,7 +85,7 @@ hl.config({
     shadow = {
       enabled = true,
       range = 4,
-      render_power = 1,
+      render_power = 2,
       color = "rgba(1a1a1aee)",
       sharp = false,
     },
@@ -69,8 +93,12 @@ hl.config({
     blur = {
       enabled = true,
       size = 5,
-      passes = 2,
+      passes = 4,
+      noise = 0.10,
+      contrast = 0.8,
+      brightness = 1,
 
+      popups = true,
       vibrancy = 0.1696,
       xray = false,
 
@@ -83,7 +111,7 @@ hl.config({
     },
 
     motion_blur = {
-      enabled = false,
+      enabled = true,
     },
 
     glow = {
