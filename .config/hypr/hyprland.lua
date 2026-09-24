@@ -250,11 +250,14 @@ hl.animation({
 
 hl.gesture({ fingers = 3, direction = "vertical", action = "workspace" })
 hl.gesture({ fingers = 3, direction = "swipe", mods = "SUPER", action = "resize" })
-hl.gesture({ fingers = 3, direction = "right", action = function()
-        hl.dispatch(hl.dsp.global("movefocus:l"))
+hl.gesture({
+    fingers = 4,
+    direction = "right",
+    action = function()
+      hl.dispatch(hl.dsp.focus({ direction = "l" }))
     end })
-hl.gesture({ fingers = 3, direction = "left", action = function()
-        hl.dispatch(hl.dsp.global("movefocus:r"))
+hl.gesture({ fingers = 4, direction = "left", action = function()
+      hl.dispatch(hl.dsp.focus({ direction = "r" }))
     end })
 
 hl.gesture({ fingers = 4, direction = "vertical", action = "special", workspace_name="magic" })
@@ -265,13 +268,25 @@ hl.gesture({ fingers = 4, direction = "up", mods = "SUPER", action = "cursorZoom
 
 hl.gesture({ fingers = 4, direction = "down", mods = "SUPER", action = "cursorZoom", zoom_level = -1, mode = "mult" })
 
-hl.gesture({ fingers = 4, direction = "left", action = function()
-        hl.dispatch(hl.dsp.global("workspace:6"))
+-- 3 fingers horizontal right jumps between the current workspace and the previous one
+hl.gesture({ fingers = 3, direction = "right", action = function()
+    hl.dispatch(hl.dsp.focus({ workspace = "previous" }))
+end })
+
+-- 3 fingers horizontal left: similar to the right, but jumps between chat workspace and the previous
+hl.gesture({
+    fingers = 3,
+    direction = "left",
+    action = function()
+        local workspace = hl.get_active_workspace();
+        if workspace.id == 6 then
+          hl.dispatch(hl.dsp.focus({ workspace = "previous" }))
+
+        else
+          hl.dispatch(hl.dsp.focus({ workspace = 6 }))
+        end
     end })
 
-    hl.gesture({ fingers = 4, direction = "right", action = function()
-        hl.dispatch(hl.dsp.global("workspace:previous"))
-    end })
 
 
 -- Workspaces from 1 to 5 are assigned to monitor $mainMonitor
