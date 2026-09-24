@@ -190,8 +190,7 @@ hl.window_rule({
   match = {
     class = "^(obsidian|md.obsidian.Obsidian)$"
   },
-    workspace = "3",
-  group = "set",
+  workspace = "3",
   pseudo = true,
   size = { "monitor_w*0.8", "monitor_h*0.9" },
   opaque = true,
@@ -202,7 +201,6 @@ hl.window_rule({
   match = {
     class = "^(Zotero)$"
     },
-  group = "set",
   workspace = "3",
 })
 

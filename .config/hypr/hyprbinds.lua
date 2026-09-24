@@ -59,6 +59,11 @@ hl.bind("CTRL + ALT + mouse:275", hl.dsp.focus({ workspace = "r+1"}), { descript
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1"}), { description = "Move to the next active workspace (mouse)" })
 hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }),
     { description = "Move to the previous active workspace (mouse)" })
+hl.bind(mainMod .. " + mouse_right", hl.dsp.focus({ direction = "r" }),
+    { description = "Move to the previous active workspace (mouse)" })
+
+hl.bind(mainMod .. " + mouse_left", hl.dsp.focus({ direction = "l" }),
+    { description = "Move to the previous active workspace (mouse)" })
 
 -- Change workspace (mouse)
 hl.bind(mainMod .. " + mouse:276", hl.dsp.workspace.toggle_special("magic"), { description = "Move to the next workspace (mouse side button)" })

@@ -249,7 +249,16 @@ hl.animation({
 --------------
 
 hl.gesture({ fingers = 3, direction = "vertical", action = "workspace" })
-hl.gesture({ fingers = 3, direction = "swipe", mods = "SUPER", action = "resize" })
+
+hl.gesture({ fingers = 3, direction = "right", mods = "SUPER", action = function()
+  hl.dispatch(hl.dsp.focus({ direction = "l" }))
+    end
+})
+hl.gesture({ fingers = 3, direction = "left", mods = "SUPER", action = function()
+  hl.dispatch(hl.dsp.focus({ direction = "r" }))
+    end
+})
+
 hl.gesture({
     fingers = 4,
     direction = "right",
@@ -295,8 +304,11 @@ for i = 1, 5 do
 end
 
 for i = 6, 10 do
-  hl.workspace_rule({ workspace = tostring(i), monitor = monitors.secondaryMonitor})
+    hl.workspace_rule({ workspace = tostring(i), monitor = monitors.secondaryMonitor })
 end
+
+hl.workspace_rule({ workspace = 2, layout = "scrolling"})
+hl.workspace_rule({ workspace = 3, layout = "scrolling"})
 
 require("hyprbinds")
 require("hyprrules")
