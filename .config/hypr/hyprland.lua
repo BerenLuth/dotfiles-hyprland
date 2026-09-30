@@ -244,57 +244,6 @@ hl.animation({
     style = "slidevert"
 })
 
---------------
--- GESTURES --
---------------
-
-hl.gesture({ fingers = 3, direction = "vertical", action = "workspace" })
-
-hl.gesture({ fingers = 3, direction = "right", mods = "SUPER", action = function()
-  hl.dispatch(hl.dsp.focus({ direction = "l" }))
-    end
-})
-hl.gesture({ fingers = 3, direction = "left", mods = "SUPER", action = function()
-  hl.dispatch(hl.dsp.focus({ direction = "r" }))
-    end
-})
-
-hl.gesture({
-    fingers = 4,
-    direction = "right",
-    action = function()
-      hl.dispatch(hl.dsp.focus({ direction = "l" }))
-    end })
-hl.gesture({ fingers = 4, direction = "left", action = function()
-      hl.dispatch(hl.dsp.focus({ direction = "r" }))
-    end })
-
-hl.gesture({ fingers = 4, direction = "vertical", action = "special", workspace_name="magic" })
-
-hl.gesture({ fingers = 4, direction = "vertical", mods = "CTRL", action = "special", workspace_name="music" })
-
-hl.gesture({ fingers = 4, direction = "up", mods = "SUPER", action = "cursorZoom", zoom_level = 2.5, mode = "mult" })
-
-hl.gesture({ fingers = 4, direction = "down", mods = "SUPER", action = "cursorZoom", zoom_level = -1, mode = "mult" })
-
--- 3 fingers horizontal right jumps between the current workspace and the previous one
-hl.gesture({ fingers = 3, direction = "right", action = function()
-    hl.dispatch(hl.dsp.focus({ workspace = "previous" }))
-end })
-
--- 3 fingers horizontal left: similar to the right, but jumps between chat workspace and the previous
-hl.gesture({
-    fingers = 3,
-    direction = "left",
-    action = function()
-        local workspace = hl.get_active_workspace();
-        if workspace.id == 6 then
-          hl.dispatch(hl.dsp.focus({ workspace = "previous" }))
-
-        else
-          hl.dispatch(hl.dsp.focus({ workspace = 6 }))
-        end
-    end })
 
 
 
@@ -311,5 +260,6 @@ hl.workspace_rule({ workspace = 2, layout = "scrolling"})
 hl.workspace_rule({ workspace = 3, layout = "scrolling"})
 
 require("hyprbinds")
+require("gestures")
 require("hyprrules")
 require("privacy")

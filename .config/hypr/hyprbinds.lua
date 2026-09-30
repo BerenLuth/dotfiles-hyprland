@@ -46,28 +46,32 @@ end
 
 -- Change workspace
 hl.bind("CTRL + ALT + Down", hl.dsp.focus({ workspace = "r+1"}), { description = "Move to the next workspace" })
-hl.bind("CTRL + ALT + Up", hl.dsp.focus({ workspace = "r-1"}), { description = "Move to the previous workspace" })
+hl.bind("CTRL + ALT + Up", hl.dsp.focus({ workspace = "r-1" }), { description = "Move to the previous workspace" })
+
+-- useful for scrolling layout
+hl.bind("CTRL + ALT + right", hl.dsp.focus({ direction = "r" }), { description = "Move to the focus to the right" })
+hl.bind("CTRL + ALT + left", hl.dsp.focus({ direction = "l" }), { description = "Move to the focus to the left" })
 
 hl.bind("CTRL + ALT + J", hl.dsp.focus({ workspace = "e+1"}), { description = "Move to the next active workspace" })
 hl.bind("CTRL + ALT + K", hl.dsp.focus({ workspace = "e-1"}), { description = "Move to the previous active workspace" })
 
-hl.bind(mainMod .. " + backslash", hl.dsp.focus({ workspace = "previous"}), { description = "Move to the previous workspace" })
+hl.bind(mainMod .. " + backslash", hl.dsp.focus({ workspace = "previous" }),
+    { description = "Move to the previous workspace" })
+
+-----------
+-- MOUSE --
+-----------
 
 -- Change workspace (mouse)
 hl.bind("CTRL + ALT + mouse:276", hl.dsp.focus({ workspace = "r-1"}), { description = "Move to the next workspace (mouse side button)" })
 hl.bind("CTRL + ALT + mouse:275", hl.dsp.focus({ workspace = "r+1"}), { description = "Move to the previous workspace (mouse side button)" })
-hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1"}), { description = "Move to the next active workspace (mouse)" })
-hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }),
-    { description = "Move to the previous active workspace (mouse)" })
-hl.bind(mainMod .. " + mouse_right", hl.dsp.focus({ direction = "r" }),
-    { description = "Move to the previous active workspace (mouse)" })
-
-hl.bind(mainMod .. " + mouse_left", hl.dsp.focus({ direction = "l" }),
-    { description = "Move to the previous active workspace (mouse)" })
 
 -- Change workspace (mouse)
 hl.bind(mainMod .. " + mouse:276", hl.dsp.workspace.toggle_special("magic"), { description = "Move to the next workspace (mouse side button)" })
-hl.bind(mainMod .. " + mouse:275", hl.dsp.workspace.toggle_special("music"), { description = "Move to the previous workspace (mouse side button)" })
+hl.bind(mainMod .. " + mouse:275", hl.dsp.workspace.toggle_special("music"),
+    { description = "Move to the previous workspace (mouse side button)" })
+
+-- FOR THE MOUSE WHEELS CHECK ./gestures.lua
 
 
 -- Move window to workspace

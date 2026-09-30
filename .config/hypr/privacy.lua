@@ -49,3 +49,11 @@ hl.window_rule({
     },
     no_screen_share = true,
 })
+
+hl.window_rule({
+  name = "obsidian",
+  match = {
+    class = "^(obsidian|md.obsidian.Obsidian)$"
+  },
+  no_screen_share = true,
+})

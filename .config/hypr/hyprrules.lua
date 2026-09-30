@@ -32,6 +32,15 @@ hl.window_rule({ match = { float = false, workspace = "f[1]" }, rounding = 0 })
 -----------------------
 
 hl.window_rule({
+    name = "Terminal",
+    match = {
+        class = "^(kitty)$",
+    },
+    fullscreen = false,
+    size = { 500, 500}
+})
+
+hl.window_rule({
   name = "coding tools",
   match = {
     class = "^(codium|code|code-oss|dev.zed.Zed)$"
@@ -193,7 +202,7 @@ hl.window_rule({
   workspace = "3",
   pseudo = true,
   size = { "monitor_w*0.8", "monitor_h*0.9" },
-  opaque = true,
+    opaque = true,
 })
 
 hl.window_rule({
@@ -306,7 +315,7 @@ hl.window_rule({
   },
   float = true,
   size = { 600, 340 },
-  move = { "monitor_w - window_w - 32", "monitor_h*0.06" },
+  move = { "monitor_w - 664", "16" },
   opacity = 0.8,
   rounding = 20,
   pin = true,
@@ -386,6 +395,7 @@ hl.layer_rule({
     ignore_alpha = 0,
     dim_around = true,
     blur_popups = true,
+    no_screen_share = true,
 })
 
 hl.layer_rule({
@@ -396,6 +406,7 @@ hl.layer_rule({
     blur = true,
     xray = true,
     ignore_alpha = 0,
+    no_screen_share = true,
 })
 
 hl.layer_rule({
