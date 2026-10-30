@@ -102,16 +102,33 @@ hl.config({
       vibrancy = 0.1696,
       xray = false,
 
-      variant = kawase,
+      variant = "haze",
 
       special = true,
-      -- acrylic = {
-      --   aberration = 0.25,
-      -- }
+      acrylic = {
+                aberration = 0.25,
+                bulb = 20,
+                clarity = 0.5,
+                refraction = 48,
+
+      },
+
+      aurora = {
+        intensity = 1,
+        speed = 4,
+      },
+
+      fluid_jar = {
+        distortion = 9,
+        fill_amount = 0.7,
+        mass = 0.5,
+        precision = 1,
+        turbulence = 2,
+      }
     },
 
     motion_blur = {
-      enabled = true,
+      enabled = false,
     },
 
     glow = {

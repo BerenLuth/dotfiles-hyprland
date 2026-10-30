@@ -1,11 +1,10 @@
 {
-	"layer": "bottom",
+	"layer": "top",
 	"position": "right",
 	"width": 30,
 	"spacing": 2,
 	"margin": 0,
 	"margin-left": 0,
-	"mode": "dock",
 	"modules-left": [
 		"privacy",
 		"custom/micInUse",
@@ -328,7 +327,8 @@
 		"return-type": "json",
 		"on-click": "playerctl play-pause",
 		"format": "{text}",
-		"interval": 1
+		"interval": 1,
+		"max-length": 20
 	},
 	"custom/logout": {
 		"tooltip": false,

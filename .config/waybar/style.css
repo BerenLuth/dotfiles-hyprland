@@ -123,3 +123,8 @@ window#waybar {
 #custom-logout label,#custom-notification label, #custom-hyprsunset label, #custom-micInUse label, #custom-microphone label {
   min-width: 36px; /* Same as bar width */
 }
+
+.red-tooltip {
+  background-color: red;
+  color: black;
+}

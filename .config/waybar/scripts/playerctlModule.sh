@@ -19,11 +19,11 @@ if [[ "$1" == "-p" ]]; then
   if playerctl status &> /dev/null; then
     status=$(playerctl status)
     if [[ "$status" == "Playing" ]]; then
-      icon=""
+      icon=" "
     else
-      icon=""
+      icon=" "
     fi
-    echo "{\"text\":\"$icon $(playerctl metadata title)\", \"tooltip\":\"$(playerctl metadata artist) - $(playerctl metadata album) ($(playerctl metadata xesam:contentCreated))\", \"class\":\"$status\"}"
+    echo "{\"text\":\"$icon $(playerctl metadata title)\", \"tooltip\":\"<b> $(playerctl metadata title)</b>\n󰠃 $(playerctl metadata artist)\n󰀥 $(playerctl metadata album)\", \"class\":\"$status\"}"
   else
     exit 0
   fi
@@ -33,9 +33,9 @@ if [[ "$1" == "-t" ]]; then
   if playerctl status &> /dev/null; then
     status=$(playerctl status)
     if [[ "$status" == "Playing" ]]; then
-      icon=""
+      icon=" "
     else
-      icon=""
+      icon=" "
     fi
     echo "{\"text\":\"$icon $(playerctl metadata title) - $(playerctl metadata artist)\", \"tooltip\":\"Click to toggle play/pause\", \"class\":\"$status\"}"
   else

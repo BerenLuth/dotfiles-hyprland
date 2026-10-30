@@ -14,7 +14,7 @@ local topRightToolPosition = { "monitor_w-".. toolWidth + screenMarginRight, scr
 hl.workspace_rule({ workspace = "special:magic", on_created_empty = terminal .. " --class=\"magic-terminal\" tmux new-session -A -s magic" })
 hl.workspace_rule({ workspace = "special:music", on_created_empty = "feishin"})
 hl.workspace_rule({ workspace = "special:todo", on_created_empty = "chromium --app=\"https://to-do.live.com/tasks/myday\""})
-hl.workspace_rule({ workspace = "special:ai-chat", on_created_empty = "chromium --app=\"https://chatgpt.com\""})
+hl.workspace_rule({ workspace = "special:ai-chat", on_created_empty = "chromium --app=\"https://claude.ai\""})
 hl.workspace_rule({ workspace = "6", on_created_empty = "Telegram | telegram-desktop" })
 hl.workspace_rule({ workspace = "4", on_created_empty = terminal .. " --class=\"git-terminal\""})
 
@@ -80,8 +80,9 @@ hl.window_rule({
   match = {
     class = "^(feishin|Spotify)$"
   },
-    workspace = "special:music",
+  workspace = "special:music",
   size = { 1150, 900 },
+  rounding = 16,
   pseudo = true,
 })
 
@@ -292,7 +293,8 @@ hl.window_rule({
     class = "git-terminal"
   },
   pseudo = true,
-  size = { "monitor_w*0.8", "monitor_h*0.8" },
+  rounding = 16,
+  size = { "monitor_w*0.83", "monitor_h*0.85" },
 })
 
 hl.window_rule({
@@ -357,9 +359,9 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    name = "Chatgpt",
+    name = "Claude chat",
     match = {
-        class = "chrome-chatgpt.com__-Default",
+        class = "chrome-claude.ai__-Default",
     },
     float = false,
     pseudo = true,
@@ -427,4 +429,6 @@ hl.layer_rule({
     },
     blur = true,
     ignore_alpha = 0,
+    no_screen_share = true,
+    above_lock = false,
 })
